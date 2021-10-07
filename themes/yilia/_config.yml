@@ -11,11 +11,14 @@ timezone:
 
 menu:
   主页: /
-  随笔: /tags/随笔/
+  分类: /categories
+  归档: /archives
+  tags: /tags
+# Add a custom footer
 
 # SubNav
 subnav:
-  github: "#"
+  github: "https://github.com/sysszcl"
   weibo: "#"
   rss: "#"
   zhihu: "#"
@@ -74,10 +77,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /favicon.png
+favicon: /images/avatar.ico
 
 #你的头像url
-avatar: https://img1.baidu.com/it/u=2541776918,1308598099&fm=253&fmt=auto&app=120&f=PNG?w=413&h=413
+avatar: /images/avatar.jpg
 
 #是否开启分享
 share_jia: true
@@ -138,4 +141,16 @@ friends:
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
+# 设置站点建立时间
+since: 2013
+
+# 是否开启字数统计
+#不需要使用，直接设置值为false，或注释掉
+word_count: False
+
+#头像是否旋转(如果不要旋转取false)
+avatarrotation: true
+
+# 页面点击小红心
+love: true
 

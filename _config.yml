@@ -125,3 +125,8 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+# 配置全文检索
+search:
+  path: search.xml
+  field: all
