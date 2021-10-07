@@ -13,7 +13,7 @@ menu:
   主页: /
   分类: /categories
   归档: /archives
-  tags: /tags
+  留言墙: /message-wall
 # Add a custom footer
 
 # SubNav
@@ -146,7 +146,7 @@ since: 2013
 
 # 是否开启字数统计
 #不需要使用，直接设置值为false，或注释掉
-word_count: False
+word_count: true
 
 #头像是否旋转(如果不要旋转取false)
 avatarrotation: true
@@ -154,3 +154,6 @@ avatarrotation: true
 # 页面点击小红心
 love: true
 
+# 是否开启访问量统计功能(不蒜子)
+busuanzi:
+ enable: true
