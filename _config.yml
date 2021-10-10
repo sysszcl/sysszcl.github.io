@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 袁泉的个人博客
-subtitle: yuanquan's blog.
+title: 树叶莎莎遮窗棂的个人博客
+subtitle: 每天进步一点点
 description: Hello,here is yuanquan'blog.
 keywords:
-author: 袁泉
+author: 树叶莎莎遮窗棂
 language: 
 timezone: 
 
@@ -102,6 +102,13 @@ ignore:
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins:
+  hexo-generator-feed
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20 # 最新的20篇文章
 ## Themes: https://hexo.io/themes/
 theme: yilia
 # Deployment

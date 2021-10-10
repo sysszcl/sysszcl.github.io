@@ -1,11 +1,11 @@
 # Header
 
 # Site
-title: 袁泉的个人博客
-subtitle: yuanquan's blog.
+title: 树叶莎莎遮窗棂的个人博客
+subtitle: 每天进步一点点
 description: Hello,here is yuanquan'blog.
 keywords:
-author: 袁泉
+author: 树叶莎莎遮窗棂
 language: 
 timezone: 
 
@@ -170,4 +170,40 @@ love: true
 busuanzi:
  enable: true
 
- 
+# 心知天气(如果不用为false):https://www.seniverse.com
+#xinzhi_weather: false
+
+ # 版权声明
+#在需要进行版权声明的文章的md文件头部，设置属性declare: true。
+#版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明
+declare:
+  declare_type: 1
+  licensee_url: https://creativecommons.org/licenses/by-nc-sa/4.0/        #当前应用的版权协议地址。
+  licensee_name: 'CC BY-NC-SA 4.0'                                        #版权协议的名称
+  licensee_alias: '知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议'       # alias别名
+  licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png    #版权协议的Logo
+
+  # Live2D
+## https://github.com/EYHN/hexo-helper-live2d
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-hijiki # 模型：https://huaji8.top/post/live2d-plugin-2.0/
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true
+
+# Tab Title Change | 标签页标题切换
+tab_title_change: 
+  enable: true
+  left_tab_title: '(つェ⊂) 我藏好了哦~ '
+  return_tab_title: '(*´∇｀*) 被你发现啦~ '

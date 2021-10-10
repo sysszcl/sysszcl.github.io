@@ -3,6 +3,11 @@
     <body>
         <div id="container" q-class="show:isCtnShow">
             <canvas id="anm-canvas" class="anm-canvas"></canvas>
+            <div class="mymenucontainer" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
             <div class="left-col" q-class="show:isShow">
                 <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
             </div>
@@ -65,8 +70,40 @@
                     <script type="text/javascript" src="/js/love.js"></script>
                     <% } %>
                         <!-- 页面点击小红心》 -->
-
+                        <!-- 代码块复制功能 -->
+                        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+                        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+                        <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+                        <script type="text/javascript" src="/js/clipboard_use.js"></script>
 
     </body>
+    <!-- 添加折叠脚本 -->
+    <script>
+        var hide = false;
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            if (hide == false) {
+                $(".left-col").css('display', 'none');
+                $(".mid-col").css("left", 6);
+                $(".tools-col").css('display', 'none');
+                $(".tools-col.hide").css('display', 'none');
+                hide = true;
+
+                $(".mymenucontainer").css('left', '0');
+
+            } else {
+                $(".left-col").css('display', '');
+                $(".mid-col").css("left", 300);
+                $(".tools-col").css('display', '');
+                $(".tools-col.hide").css('display', '');
+                hide = false;
+
+                $(".mymenucontainer").css('left', '260px');
+
+            }
+        }
+    </script>
+    <!-- 添加折叠脚本 -->
 
     </html>

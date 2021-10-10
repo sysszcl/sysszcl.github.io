@@ -1,5 +1,8 @@
 ---
-title: 分类
-date: 2021-10-07 15:59:22
-type: "categories"
+title: 文章分类
+date: 2021-10-7 11:48:35
+toc: false
+comments: false
+layout: categories
 ---
+
