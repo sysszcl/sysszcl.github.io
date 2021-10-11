@@ -376,7 +376,6 @@
         /* background-color:#fff; */
         min-height: 100%;
         background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/00/ChMkJlbKw6KIXhXnAA4L-_oxRzUAALG6QBUSg8ADgwT181.jpg') no-repeat 0% 0%/ cover;
-        cursor: url('/images/cursor.ico'), default;
     }
     /* 因为超链接默认情况下是：cursor: pointer; 显示为手，这里进行设置 */
     
@@ -944,6 +943,10 @@
         /* background-color:#fff; */
         min-height: 100%;
         background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://desk-fd.zol-img.com.cn/t_s960x600c5/g5/M00/02/00/ChMkJlbKw6KIXhXnAA4L-_oxRzUAALG6QBUSg8ADgwT181.jpg') no-repeat 0% 0%/ cover !important;
+    }
+    
+    body::-webkit-scrollbar {
+        display: none
     }
     
     #container,
