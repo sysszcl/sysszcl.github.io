@@ -76,7 +76,7 @@ toc_empty_wording: '目录，不存在的…'
 top: true
 
 # Miscellaneous
-baidu_analytics: ''
+baidu_analytics: 'cec10bcf76ec1ada6d66131fd90cfee8'
 google_analytics: ''
 favicon: /images/avatar.ico
 
@@ -166,6 +166,33 @@ avatarrotation: true
 # 页面点击小红心
 love: true
 
+# 雪花特效2
+# snow2: true
+# 雪花特效2
+snow2: 
+ enabled: true
+
+
+# 鼠标点击显示文字
+click_show_text: true
+
+# 雪花特效3
+snow3: true
+
+# 彩带2.自动飘动
+ribbon_flow: true
+
+# https://github.com/hustcc/canvas-nest.js
+# 配置详见： https://github.com/hustcc/canvas-nest.js#configuration
+# 动态线条效果，会向鼠标集中
+canvas_nest:
+  enable: true
+  color: '9, 201, 255'        # color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  pointColor: '255,255,255'     # color of points, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  opacity: '1'               # the opacity of line (0~1), default: 0.5.
+  count: '99'                  # the number of lines, default: 99.
+  zIndex: '0'                 # z-index property of the background, default: -1.
+
 # 是否开启访问量统计功能(不蒜子)
 busuanzi:
  enable: true
@@ -207,3 +234,4 @@ tab_title_change:
   enable: true
   left_tab_title: '(つェ⊂) 我藏好了哦~ '
   return_tab_title: '(*´∇｀*) 被你发现啦~ '
+

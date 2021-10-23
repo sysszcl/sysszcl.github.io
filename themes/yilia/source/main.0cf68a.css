@@ -3360,7 +3360,7 @@
     }
     
     .footer-right {
-        me float: right
+        float: right
     }
     
     @media screen and (max-width:800px) {
@@ -3372,7 +3372,7 @@
             overflow-y: auto
         }
         body {
-            background: url('https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fnimg.ws.126.net%2F%3Furl%3Dhttp%3A%2F%2Fdingyue.ws.126.net%2F2021%2F0420%2F41e65ed1j00qrut48001rc000hs012hg.jpg%26thumbnail%3D650x2147483647%26quality%3D80%26type%3Djpg&refer=http%3A%2F%2Fnimg.ws.126.net&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1636732137&t=b7bc118b0773bd585c1125bf05f02373') no-repeat fixed top;
+            background: url('/images/blogPhone.jpg') no-repeat fixed top;
         }
         #mobile-nav {
             display: block

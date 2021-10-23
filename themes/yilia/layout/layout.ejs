@@ -60,21 +60,43 @@
                     <%- partial('_partial/viewer') %>
         </div>
 
-        <!-- 雪花特效2 -->
-        <% if (theme.snow2){ %>
-            <script type="text/javascript" src="/js/snow2.js"></script>
-            <% } %>
 
-                <!-- 《页面点击小红心 -->
-                <% if (theme.love){ %>
-                    <script type="text/javascript" src="/js/love.js"></script>
+        <!--动态线条背景-->
+        <% if (theme.canvas_nest.enable){ %>
+            <script type="text/javascript" color="<%=theme.canvas_nest.color %>" opacity="<%=theme.canvas_nest.opacity %>" zIndex="<%=theme.canvas_nest.zIndex %>" count="<%=theme.canvas_nest.count %>" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+            </script>
+            <% } %>
+                <!--彩带2.自动飘动-->
+                <% if (theme.ribbon_flow){ %>
+                    <!-- <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script> -->
+                    <script type="text/javascript" src="/js/ribbon_flow.js"></script>
                     <% } %>
-                        <!-- 页面点击小红心》 -->
-                        <!-- 代码块复制功能 -->
-                        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
-                        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-                        <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
-                        <script type="text/javascript" src="/js/clipboard_use.js"></script>
+                        <!-- 雪花特效3 -->
+                        <% if (theme.snow3){ %>
+                            <script type="text/javascript" src="/js/snow3.js"></script>
+                            <% } %>
+                                <!--单击显示文字-->
+                                <% if (theme.click_show_text){ %>
+                                    <script type="text/javascript" src="/js/click_show_text.js"></script>
+                                    <% } %>
+                                        <!-- 雪花特效2 -->
+                                        <!-- 引入jQuery -->
+                                        <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
+                                        <% if (theme.snow2){ %>
+                                            <script type="text/javascript" src="/js/snow2.js"></script>
+                                            <% } %>
+
+                                                <!-- 《页面点击小红心 -->
+                                                <% if (theme.love){ %>
+                                                    <script type="text/javascript" src="/js/love.js"></script>
+                                                    <% } %>
+                                                        <!-- 页面点击小红心》 -->
+                                                        <!-- 代码块复制功能 -->
+                                                        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+                                                        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+                                                        <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+                                                        <script type="text/javascript" src="/js/clipboard_use.js"></script>
 
     </body>
     <!-- 添加折叠脚本 -->
