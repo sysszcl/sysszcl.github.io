@@ -1,11 +1,7 @@
 /*样式一*/
-(function ($) {
-    $.fn.snow = function (options) {
-        var $flake = $('<div id="snowbox" />').css({
-                'position': 'absolute',
-                'z-index': '9999',
-                'top': '-50px'
-            }).html('❄'),
+(function($) {
+    snow = function(options) {
+        var $flake = $('<div id="snowbox" />').css({ 'position': 'absolute', 'z-index': '9999', 'top': '-50px' }).html('&#10052;'),
             documentHeight = $(document).height(),
             documentWidth = $(document).width(),
             defaults = {
@@ -15,7 +11,7 @@
                 flakeColor: "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
             },
             options = $.extend({}, defaults, options);
-        var interval = setInterval(function () {
+        var interval = setInterval(function() {
             var startPositionLeft = Math.random() * documentWidth - 100,
                 startOpacity = 0.5 + Math.random(),
                 sizeFlake = options.minSize + Math.random() * options.maxSize,
@@ -31,14 +27,14 @@
                 top: endPositionTop,
                 left: endPositionLeft,
                 opacity: 0.2
-            }, durationFall, 'linear', function () {
+            }, durationFall, 'linear', function() {
                 $(this).remove()
             });
         }, options.newOn);
     };
 })(jQuery);
-$(function () {
-    $.fn.snow({
+$(function() {
+    snow({
         minSize: 5,
         /* 定义雪花最小尺寸 */
         maxSize: 50,
