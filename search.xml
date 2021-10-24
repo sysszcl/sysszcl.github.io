@@ -60,7 +60,7 @@
       <link href="/message-wall/index.html"/>
       <url>/message-wall/index.html</url>
       
-        <content type="html"><![CDATA[<div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>]]></content>
+        <content type="html"><![CDATA[<!-- <div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://oss.yansheng.xyz/video/Let%20Her%20Go-J.Fla.mp4"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script> -->]]></content>
       
     </entry>
     
