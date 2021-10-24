@@ -60,9 +60,9 @@ reward_type: 2
 # 打赏wording
 reward_wording: '谢谢你请我吃糖果'
 # 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
-alipay: 
+alipay: /assets/img/alipay.png
 # 微信二维码图片地址
-weixin: 
+weixin: /assets/img/weixin.png
 
 # 目录
 # 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
@@ -191,7 +191,7 @@ canvas_nest:
   pointColor: '255,255,255'     # color of points, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
   opacity: '1'               # the opacity of line (0~1), default: 0.5.
   count: '99'                  # the number of lines, default: 99.
-  zIndex: '0'                 # z-index property of the background, default: -1.
+  zIndex: '-1'                 # z-index property of the background, default: -1.
 
 # 是否开启访问量统计功能(不蒜子)
 busuanzi:
