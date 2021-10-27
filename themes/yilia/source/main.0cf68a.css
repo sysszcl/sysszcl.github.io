@@ -369,7 +369,7 @@
     
     body {
         margin: 0;
-        font-size: 14px;
+        font-size: 16px;
         font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
         line-height: 1.5;
         color: #333;
@@ -388,9 +388,19 @@
         word-wrap: break-word;
         word-break: break-all;
     }
-    /* 文章中的超链接,鼠标悬浮特效*/
+    /* 文章中的超链接,鼠标悬浮特效
+参考：https://css.30secondsofcode.org/snippet/hover-underline-animation
+*/
+    /* 
+1.“.article-entry  a”：文章中的超链接
+2.“#article-nav a”：该篇文章的上下页的超链接
+3.“h1 a.article-title  或者 h1 a.archive-article-title”:各种目录页的文章标题
+或者可以这样："h1[itemprop="name"] a"
+*/
     
-    .article-entry a {
+    .article-entry a,
+    #article-nav a,
+    h1[itemprop="name"] a {
         display: inline-block;
         position: relative;
         color: #0087ca;
@@ -399,13 +409,17 @@
     }
     /* 鼠标悬浮时，变色 */
     
-    .article-entry a:hover {
+    .article-entry a:hover,
+    #article-nav a:hover,
+    h1[itemprop="name"] a:hover {
         color: #d7191a;
         transition: .8s;
     }
     /* 鼠标悬浮时，下划线从中间向两边延伸 */
     
-    .article-entry a:hover::after {
+    .article-entry a:hover::after,
+    #article-nav a:hover::after,
+    h1[itemprop="name"] a:hover::after {
         transform: scaleX(1);
         /* 旋转，与transform连用；这里作用：鼠标悬浮时，底部的下划线从中间扩散到两边。
    bottom right :左到右出现，左到右消失（需配合上面的::after）
@@ -414,7 +428,9 @@
     }
     /* 鼠标移开后，下划线从两边向中间消失 */
     
-    .article-entry a::after {
+    .article-entry a::after,
+    #article-nav a::after,
+    h1[itemprop="name"] a::after {
         content: '';
         position: absolute;
         width: 100%;
@@ -428,54 +444,10 @@
         transform-origin: bottom center;
         transition: transform 0.5s ease-out;
     }
-    /* 文中超链接样式 */
-    
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    main,
-    menu,
-    nav,
-    section,
-    summary {
-        display: block
-    }
-    
-    audio,
-    canvas,
-    progress,
-    video {
-        display: inline-block
-    }
-    
-    audio:not([controls]) {
-        display: none;
-        height: 0
-    }
-    
-    progress {
-        vertical-align: baseline
-    }
-    
-    [hidden],
-    template {
-        display: none
-    }
-    
-    a {
-        background: transparent;
-        text-decoration: none;
-        color: #08c
-    }
-    
-    a:active {
-        outline: 0
-    }
+    /* CSS排除选择器（好像无效）,a:not(.page-reward-btn) */
+    /* .article-entry a:not(.page-reward-btn)::after{
+  position: relative;
+} */
     
     abbr[title] {
         border-bottom: 1px dotted
@@ -936,7 +908,7 @@
     
     body {
         margin: 0;
-        font-size: 14px;
+        font-size: 16px;
         font-family: Helvetica Neue, Helvetica, STHeiTi, Arial, sans-serif;
         line-height: 1.5;
         color: #333;
@@ -1285,7 +1257,7 @@
     }
     
     .article-entry .highlight .line {
-        color: #00ff0d;
+        color: #fff;
         min-height: 19px
     }
     
@@ -1352,7 +1324,8 @@
     
     pre .class .params,
     pre .function .keyword,
-    pre .keyword， pre .literal {
+    pre .keyword,
+    pre .literal {
         color: #66d9ef
     }
     /* 代码块样式之css的属性值、函数名、参数、标签：白色 */
