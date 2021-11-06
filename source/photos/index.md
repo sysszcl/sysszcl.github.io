@@ -1,4 +1,14 @@
-<h1>相册</h1>
+---
+layout: post
+slug: photos
+title: 相册
+noDate: 'true'
+comments: 'true'
+reward: 'true'
+open_in_new: false
+abbrlink: e26d1860
+---
+
 <link rel="stylesheet" href="./ins.css">
 <div class="photos-btn-wrap">
     <a class="photos-btn active" href="javascript:void(0)">Photos</a>

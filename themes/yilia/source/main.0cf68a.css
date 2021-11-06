@@ -403,7 +403,7 @@
     h1[itemprop="name"] a {
         display: inline-block;
         position: relative;
-        color: #0087ca;
+        color: #0087ca !important;
         font-family: lucida console;
         /* 这种字体的英文比较好看（像代码样式） */
     }
@@ -412,7 +412,7 @@
     .article-entry a:hover,
     #article-nav a:hover,
     h1[itemprop="name"] a:hover {
-        color: #d7191a;
+        color: #d7191a !important;
         transition: .8s;
     }
     /* 鼠标悬浮时，下划线从中间向两边延伸 */
@@ -1905,7 +1905,8 @@
         margin: 0 30px;
         padding-right: 60px;
         border-bottom: 1px solid #eee;
-        background: #fff
+        /* background: #fff */
+        background: rgba(255, 255, 255, .5);
     }
     
     .archives-wrap:first-child {
@@ -1956,7 +1957,7 @@
     }
     
     .archives .archive-article-title {
-        font-size: 16px;
+        font-size: 20px;
         color: #333;
         transition: color .3s
     }
@@ -2015,12 +2016,12 @@
         vertical-align: middle;
         zoom: 1;
         color: #666;
-        font-size: 14px
+        font-size: 15px
     }
     
     .archive-article-inner .article-meta .archive-article-date {
         cursor: default;
-        font-size: 12px;
+        font-size: 15px;
         margin-bottom: 5px;
         margin-top: -10px;
         margin-right: 0
@@ -2376,7 +2377,7 @@
     }
     
     .article-meta time {
-        color: #aaa
+        color: #2f2d2a
     }
     
     .article-meta time .icon-clock {
@@ -3353,8 +3354,11 @@
         .body-wrap {
             margin-bottom: 0
         }
-        .left-col.mymenucontainer {
+        .left-col {
             display: none
+        }
+        .mymenucontainer {
+            display: none;
         }
         .mid-col {
             left: 0
