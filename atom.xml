@@ -6,7 +6,7 @@
   <link href="http://sysszcl.github.io/atom.xml" rel="self"/>
   
   <link href="http://sysszcl.github.io/"/>
-  <updated>2021-11-07T09:00:53.638Z</updated>
+  <updated>2021-11-09T12:10:41.924Z</updated>
   <id>http://sysszcl.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java命名规范</title>
+    <link href="http://sysszcl.github.io/article/1761bce2.html"/>
+    <id>http://sysszcl.github.io/article/1761bce2.html</id>
+    <published>2021-11-09T11:58:00.000Z</published>
+    <updated>2021-11-09T12:10:41.924Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Java中的名称命名规范："><a href="#Java中的名称命名规范：" class="headerlink" title="Java中的名称命名规范："></a>Java中的名称命名规范：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 包名：多单词组成时所有字母小写： xxxyyyzzz</span><br><span class="line">* 类名、接口名：多单词组成时，所有单词的首字母大写：XxxYyyZzz</span><br><span class="line">* 变量名、方法名：多单词组成时，第一个单词首字母小写，第二个单词开始每个单词的首字母大写：xxxYyyZzz</span><br><span class="line">* 常量名：所有字母都大写。多单词时每个单词用下划线连接：XXX_YYY_ZZZ</span><br></pre></td></tr></table></figure><pre><code>注意1：在起名字时，为了提高阅读性，要尽量有意义，&quot;见名知意&quot;。注意2：java采用unicode字符集，因此标识符也可以使用汉字声明，但是不建议适用</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Java中的名称命名规范：&quot;&gt;&lt;a href=&quot;#Java中的名称命名规范：&quot; class=&quot;headerlink&quot; title=&quot;Java中的名称命名规范：&quot;&gt;&lt;/a&gt;Java中的名称命名规范：&lt;/h3&gt;&lt;figure class=&quot;highlight plai</summary>
+      
+    
+    
+    
+    <category term="规范" scheme="http://sysszcl.github.io/categories/%E8%A7%84%E8%8C%83/"/>
+    
+    <category term="java" scheme="http://sysszcl.github.io/categories/%E8%A7%84%E8%8C%83/java/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="规范" scheme="http://sysszcl.github.io/tags/%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
   
   <entry>
     <title>解决Github网页上图片显示失败的问题</title>
