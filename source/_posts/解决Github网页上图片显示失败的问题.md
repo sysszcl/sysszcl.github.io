@@ -11,9 +11,9 @@ date: 2021-11-07 14:52:00
 ### 一、问题
 由于博客网站使用github图床不能显示图片而回忆起在github上图片也从未显示过，于是在CSDN借鉴[Antrn](https://blog.csdn.net/qq_38232598/article/details/91346392)博主的方式解决了本问题。
 
-F12打开控制台看一哈，出现一堆红色×。主要报错是Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
-
 <!-- more -->
+
+F12打开控制台看一哈，出现一堆红色×。主要报错是Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID
 
 去查了一下，博主[john-zeng](https://blog.csdn.net/zerooffdate/article/details/80513730)这样解释道：
 ~~~

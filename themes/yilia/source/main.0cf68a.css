@@ -500,7 +500,7 @@
     pre {
         overflow: auto;
         white-space: pre;
-        white-space: pre-wrap;
+        /* white-space: pre-wrap; */
         word-wrap: break-word
     }
     
