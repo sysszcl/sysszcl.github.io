@@ -1,11 +1,9 @@
----
 title: Java命名规范
 author: 树叶莎莎遮窗棂
 tags:
   - java
   - 规范
 categories:
-  - 规范
   - java
 abbrlink: 1761bce2
 date: 2021-11-09 19:58:00
