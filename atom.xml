@@ -6,7 +6,7 @@
   <link href="http://sysszcl.github.io/atom.xml" rel="self"/>
   
   <link href="http://sysszcl.github.io/"/>
-  <updated>2021-11-13T08:09:11.454Z</updated>
+  <updated>2021-12-02T14:15:30.914Z</updated>
   <id>http://sysszcl.github.io/</id>
   
   <author>
@@ -15,6 +15,210 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《卜算子·自嘲》</title>
+    <link href="http://sysszcl.github.io/article/1eba8d49.html"/>
+    <id>http://sysszcl.github.io/article/1eba8d49.html</id>
+    <published>2021-12-02T14:10:00.000Z</published>
+    <updated>2021-12-02T14:15:30.914Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="清·丁元英"><a href="#清·丁元英" class="headerlink" title="清·丁元英"></a>清·丁元英</h5><p>本是后山人，<br>偶做前堂客。<br>醉舞经阁半卷书，<br>坐井说天阔。<br>大志戏功名，<br>海斗量福祸。<br>论到囊中羞涩时，怒指乾坤错。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;清·丁元英&quot;&gt;&lt;a href=&quot;#清·丁元英&quot; class=&quot;headerlink&quot; title=&quot;清·丁元英&quot;&gt;&lt;/a&gt;清·丁元英&lt;/h5&gt;&lt;p&gt;本是后山人，&lt;br&gt;偶做前堂客。&lt;br&gt;醉舞经阁半卷书，&lt;br&gt;坐井说天阔。&lt;br&gt;大志戏功名，&lt;br&gt;海斗量福祸。</summary>
+      
+    
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+    <category term="生活" scheme="http://sysszcl.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="感悟" scheme="http://sysszcl.github.io/tags/%E6%84%9F%E6%82%9F/"/>
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写一个线程安全的单例模式</title>
+    <link href="http://sysszcl.github.io/article/7fa7d4d4.html"/>
+    <id>http://sysszcl.github.io/article/7fa7d4d4.html</id>
+    <published>2021-12-02T13:51:00.000Z</published>
+    <updated>2021-12-02T14:16:18.823Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Bank</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Bank instance = <span class="keyword">new</span> Bank();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span>  Bank <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><span id="more"></span><h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bank</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Bank</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Bank instance = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bank <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="comment">//方式一：效率稍差</span></span><br><span class="line"><span class="comment">//        synchronized (Bank.class) &#123;</span></span><br><span class="line"><span class="comment">//            if(instance == null)&#123;</span></span><br><span class="line"><span class="comment">//                instance = new Bank();</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//            return instance;</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="comment">//方式二：效率更高</span></span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Bank.class) &#123;</span><br><span class="line">                <span class="keyword">if</span>(instance == <span class="keyword">null</span>)&#123;</span><br><span class="line"></span><br><span class="line">                    instance = <span class="keyword">new</span> Bank();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;饿汉式&quot;&gt;&lt;a href=&quot;#饿汉式&quot; class=&quot;headerlink&quot; title=&quot;饿汉式&quot;&gt;&lt;/a&gt;饿汉式&lt;/h3&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Bank&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Bank&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt; Bank instance = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Bank();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;static&lt;/span&gt;  Bank &lt;span class=&quot;title&quot;&gt;getInstance&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; instance;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/categories/java/"/>
+    
+    <category term="多线程" scheme="http://sysszcl.github.io/categories/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="线程安全单例模式" scheme="http://sysszcl.github.io/tags/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建多线程有几种方式？</title>
+    <link href="http://sysszcl.github.io/article/dde452f5.html"/>
+    <id>http://sysszcl.github.io/article/dde452f5.html</id>
+    <published>2021-12-02T13:45:00.000Z</published>
+    <updated>2021-12-02T14:03:01.992Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="创建多线程的方式有四种"><a href="#创建多线程的方式有四种" class="headerlink" title="创建多线程的方式有四种"></a>创建多线程的方式有四种</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">继承Thread类</span><br><span class="line">实现Runnable接口</span><br><span class="line">实现Callable接口</span><br><span class="line">线程池（响应速度提高了（减少了创建新线程的时间），提高了资源的重用率（重复利用线程池中线程，不需要每次都创建），便于线程管理）</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;创建多线程的方式有四种&quot;&gt;&lt;a href=&quot;#创建多线程的方式有四种&quot; class=&quot;headerlink&quot; title=&quot;创建多线程的方式有四种&quot;&gt;&lt;/a&gt;创建多线程的方式有四种&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/categories/java/"/>
+    
+    <category term="多线程" scheme="http://sysszcl.github.io/categories/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="创建多线程" scheme="http://sysszcl.github.io/tags/%E5%88%9B%E5%BB%BA%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sleep()和wait()的异同</title>
+    <link href="http://sysszcl.github.io/article/de520b17.html"/>
+    <id>http://sysszcl.github.io/article/de520b17.html</id>
+    <published>2021-12-02T13:35:00.000Z</published>
+    <updated>2021-12-02T14:03:12.383Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="相同点："><a href="#相同点：" class="headerlink" title="相同点："></a>相同点：</h5><pre><code>一旦执行方法，都可以使得当前的线程进入阻塞状态。</code></pre><h5 id="不同点："><a href="#不同点：" class="headerlink" title="不同点："></a>不同点：</h5><pre><code>1）两个方法声明的位置不同：Thread类中声明sleep() , Object类中声明wait()2）调用的要求不同：sleep()可以在任何需要的场景下调用。 wait()必须使用在同步代码块或同步方法中3）关于是否释放同步监视器：如果两个方法都使用在同步代码块或同步方法中，sleep()不会释放锁，wait()会释放锁。</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h5 id=&quot;相同点：&quot;&gt;&lt;a href=&quot;#相同点：&quot; class=&quot;headerlink&quot; title=&quot;相同点：&quot;&gt;&lt;/a&gt;相同点：&lt;/h5&gt;&lt;pre&gt;&lt;code&gt;一旦执行方法，都可以使得当前的线程进入阻塞状态。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h5 id=&quot;不同点：&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="Java" scheme="http://sysszcl.github.io/categories/Java/"/>
+    
+    <category term="多线程" scheme="http://sysszcl.github.io/categories/Java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="多线程阻塞方法异同" scheme="http://sysszcl.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E9%98%BB%E5%A1%9E%E6%96%B9%E6%B3%95%E5%BC%82%E5%90%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>synchronized 与 Lock的异同？</title>
+    <link href="http://sysszcl.github.io/article/b3c95c5f.html"/>
+    <id>http://sysszcl.github.io/article/b3c95c5f.html</id>
+    <published>2021-12-02T13:28:00.000Z</published>
+    <updated>2021-12-02T14:03:27.897Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="相同：二者都可以解决线程安全问题"><a href="#相同：二者都可以解决线程安全问题" class="headerlink" title="相同：二者都可以解决线程安全问题"></a>相同：二者都可以解决线程安全问题</h4><h4 id="不同：synchronized机制在执行完相应的同步代码以后，自动的释放同步监视器"><a href="#不同：synchronized机制在执行完相应的同步代码以后，自动的释放同步监视器" class="headerlink" title="不同：synchronized机制在执行完相应的同步代码以后，自动的释放同步监视器"></a>不同：synchronized机制在执行完相应的同步代码以后，自动的释放同步监视器</h4><pre><code>     Lock需要手动的启动同步（lock())，同时结束同步也需要手动的实现(unlock())</code></pre>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;相同：二者都可以解决线程安全问题&quot;&gt;&lt;a href=&quot;#相同：二者都可以解决线程安全问题&quot; class=&quot;headerlink&quot; title=&quot;相同：二者都可以解决线程安全问题&quot;&gt;&lt;/a&gt;相同：二者都可以解决线程安全问题&lt;/h4&gt;&lt;h4 id=&quot;不同：synchr</summary>
+      
+    
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/categories/java/"/>
+    
+    <category term="多线程" scheme="http://sysszcl.github.io/categories/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="多线程同步机制异同" scheme="http://sysszcl.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E6%9C%BA%E5%88%B6%E5%BC%82%E5%90%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java如何解决线程安全问题</title>
+    <link href="http://sysszcl.github.io/article/317fe649.html"/>
+    <id>http://sysszcl.github.io/article/317fe649.html</id>
+    <published>2021-12-02T13:01:00.000Z</published>
+    <updated>2021-12-02T14:03:42.071Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同"><a href="#Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同" class="headerlink" title="Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同"></a>Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同</h3><h5 id="Java是通过同步机制来解决线程安全问题的，同步机制有三种"><a href="#Java是通过同步机制来解决线程安全问题的，同步机制有三种" class="headerlink" title="Java是通过同步机制来解决线程安全问题的，同步机制有三种"></a>Java是通过同步机制来解决线程安全问题的，同步机制有三种</h5><span id="more"></span><h4 id="方式一：同步代码块"><a href="#方式一：同步代码块" class="headerlink" title="方式一：同步代码块"></a>方式一：同步代码块</h4>  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">synchronized(同步监视器)&#123;</span><br><span class="line">   //需要被同步的代码</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line">  说明：1.操作共享数据的代码，即为需要被同步的代码。  --&gt;不能包含代码多了，也不能包含代码少了。</span><br><span class="line">      2.共享数据：多个线程共同操作的变量。比如：ticket就是共享数据。</span><br><span class="line">      3.同步监视器，俗称：锁。任何一个类的对象，都可以充当锁。</span><br><span class="line">        要求：多个线程必须要共用同一把锁。</span><br><span class="line"> </span><br><span class="line">     补充：在实现Runnable接口创建多线程的方式中，我们可以考虑使用this充当同步监视器。</span><br></pre></td></tr></table></figure><h4 id="方式二：同步方法。"><a href="#方式二：同步方法。" class="headerlink" title="方式二：同步方法。"></a>方式二：同步方法。</h4>   <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果操作共享数据的代码完整的声明在一个方法中，我们不妨将此方法声明同步的。</span><br></pre></td></tr></table></figure><h4 id="方式三：-Lock锁-—-JDK5-0新增"><a href="#方式三：-Lock锁-—-JDK5-0新增" class="headerlink" title="方式三： Lock锁  — JDK5.0新增"></a>方式三： Lock锁  — JDK5.0新增</h4> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.实例化ReentrantLock</span><br><span class="line">2.调用锁定方法lock()</span><br><span class="line">3.调用解锁方法：unlock()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同&quot;&gt;&lt;a href=&quot;#Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同&quot; class=&quot;headerlink&quot; title=&quot;Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同&quot;&gt;&lt;/a&gt;Java是如何解决线程安全问题的，有几种方式？并对比几种方式的不同&lt;/h3&gt;&lt;h5 id=&quot;Java是通过同步机制来解决线程安全问题的，同步机制有三种&quot;&gt;&lt;a href=&quot;#Java是通过同步机制来解决线程安全问题的，同步机制有三种&quot; class=&quot;headerlink&quot; title=&quot;Java是通过同步机制来解决线程安全问题的，同步机制有三种&quot;&gt;&lt;/a&gt;Java是通过同步机制来解决线程安全问题的，同步机制有三种&lt;/h5&gt;</summary>
+    
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/categories/java/"/>
+    
+    <category term="多线程" scheme="http://sysszcl.github.io/categories/java/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="多线程安全" scheme="http://sysszcl.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>==操作符与equals方法</title>
+    <link href="http://sysszcl.github.io/article/857b401e.html"/>
+    <id>http://sysszcl.github.io/article/857b401e.html</id>
+    <published>2021-11-23T04:54:00.000Z</published>
+    <updated>2021-11-23T05:31:31.482Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="和-equals-区别"><a href="#和-equals-区别" class="headerlink" title="== 和 equals() 区别"></a>== 和 equals() 区别</h3><h4 id="一、回顾-运算符的使用："><a href="#一、回顾-运算符的使用：" class="headerlink" title="一、回顾 == 运算符的使用："></a>一、回顾 == 运算符的使用：</h4><ol><li>可以使用在基本数据类型变量和引用数据类型变量中</li><li>如果比较的是基本数据类型变量：比较两个变量保存的数据是否相等。（不一定类型要相同）</li></ol><p>   如果比较的是引用数据类型变量：比较两个对象的地址值是否相同.即两个引用是否指向同一个对象实体</p><p>   补充： == 符号使用时，必须保证符号左右两边的变量类型一致。</p>   <span id="more"></span><h4 id="二、equals-方法的使用："><a href="#二、equals-方法的使用：" class="headerlink" title="二、equals()方法的使用："></a>二、equals()方法的使用：</h4><ol><li>是一个方法，而非运算符</li><li>只能适用于引用数据类型</li><li>Object类中equals()的定义：</li></ol><pre><code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">   public boolean equals(Object obj) &#123;</span><br><span class="line">      return (this == obj);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 说明：Object类中定义的equals()和==的作用是相同的：比较两个对象的地址值是否相同.即两个引用是否指向同一个对象实体</code></pre><ol start="4"><li>像String、Date、File、包装类等都重写了Object类中的equals()方法。重写以后，比较的不是<br>两个引用的地址是否相同，而是比较两个对象的”实体内容”是否相同。</li><li>通常情况下，我们自定义的类如果使用equals()的话，也通常是比较两个对象的”实体内容”是否相同。那么，我们<br>就需要对Object类中的equals()进行重写.<br>重写的原则：比较两个对象的实体内容是否相同.<h4 id="测试代码如下："><a href="#测试代码如下：" class="headerlink" title="测试代码如下："></a>测试代码如下：</h4></li></ol> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EqualsTest</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//基本数据类型</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> j = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">double</span> d = <span class="number">10.0</span>;</span><br><span class="line">System.out.println(i == j);<span class="comment">//true</span></span><br><span class="line">System.out.println(i == d);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">boolean</span> b = <span class="keyword">true</span>;</span><br><span class="line"><span class="comment">//System.out.println(i == b);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c = <span class="number">10</span>;</span><br><span class="line">System.out.println(i == c);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> c1 = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="keyword">char</span> c2 = <span class="number">65</span>;</span><br><span class="line">System.out.println(c1 == c2);<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//引用类型：</span></span><br><span class="line">Customer cust1 = <span class="keyword">new</span> Customer(<span class="string">&quot;Tom&quot;</span>,<span class="number">21</span>);</span><br><span class="line">Customer cust2 = <span class="keyword">new</span> Customer(<span class="string">&quot;Tom&quot;</span>,<span class="number">21</span>);</span><br><span class="line">System.out.println(cust1 == cust2);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">String str1 = <span class="keyword">new</span> String(<span class="string">&quot;atguigu&quot;</span>);</span><br><span class="line">String str2 = <span class="keyword">new</span> String(<span class="string">&quot;atguigu&quot;</span>);</span><br><span class="line">System.out.println(str1 == str2);<span class="comment">//false</span></span><br><span class="line">System.out.println(<span class="string">&quot;****************************&quot;</span>);</span><br><span class="line">System.out.println(cust1.equals(cust2));<span class="comment">//false---&gt;true</span></span><br><span class="line">System.out.println(str1.equals(str2));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">Date date1 = <span class="keyword">new</span> Date(<span class="number">32432525324L</span>);</span><br><span class="line">Date date2 = <span class="keyword">new</span> Date(<span class="number">32432525324L</span>);</span><br><span class="line">System.out.println(date1.equals(date2));<span class="comment">//true</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="总结与面试"><a href="#总结与面试" class="headerlink" title="总结与面试"></a>总结与面试</h4><ol><li><p>== 既可以比较基本类型也可以比较引用类型。对于基本类型就是比较值，对于引用类型<br>就是比较内存地址。</p></li><li><p>equals的话，它是属于java.lang.Object类里面的方法，如果该方法没有被重写过默认也<br>是==;我们可以看到String等类的equals方法是被重写过的，而且String类在日常开发中。<br>用的比较多，久而久之，形成了equals是比较值的错误观点。</p></li><li><p>具体要看自定义类里有没有重写Object的equals方法来判断。</p></li><li><p>通常情况下，重写equals方法，会比较类中的相应属性是否都相等。</p></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;和-equals-区别&quot;&gt;&lt;a href=&quot;#和-equals-区别&quot; class=&quot;headerlink&quot; title=&quot;== 和 equals() 区别&quot;&gt;&lt;/a&gt;== 和 equals() 区别&lt;/h3&gt;&lt;h4 id=&quot;一、回顾-运算符的使用：&quot;&gt;&lt;a href=&quot;#一、回顾-运算符的使用：&quot; class=&quot;headerlink&quot; title=&quot;一、回顾 == 运算符的使用：&quot;&gt;&lt;/a&gt;一、回顾 == 运算符的使用：&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;可以使用在基本数据类型变量和引用数据类型变量中&lt;/li&gt;
+&lt;li&gt;如果比较的是基本数据类型变量：比较两个变量保存的数据是否相等。（不一定类型要相同）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;   如果比较的是引用数据类型变量：比较两个对象的地址值是否相同.即两个引用是否指向同一个对象实体&lt;/p&gt;
+&lt;p&gt;   补充： == 符号使用时，必须保证符号左右两边的变量类型一致。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+    <category term="java" scheme="http://sysszcl.github.io/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/java/"/>
+    
+    
+    <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
+    
+    <category term="面试题" scheme="http://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>回形数格式方阵的实现</title>
