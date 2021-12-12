@@ -6,7 +6,7 @@
   <link href="http://sysszcl.github.io/atom.xml" rel="self"/>
   
   <link href="http://sysszcl.github.io/"/>
-  <updated>2021-12-08T15:30:26.110Z</updated>
+  <updated>2021-12-12T16:01:41.783Z</updated>
   <id>http://sysszcl.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>大道至简，大悟无言</title>
+    <link href="http://sysszcl.github.io/article/d2f3db73.html"/>
+    <id>http://sysszcl.github.io/article/d2f3db73.html</id>
+    <published>2021-12-12T15:58:00.000Z</published>
+    <updated>2021-12-12T16:01:41.783Z</updated>
+    
+    <content type="html"><![CDATA[<p>修行三年，口出狂言<br>再学三年，不敢妄言<br>又学三年，沉默寡言<br>再过三年，无需多言<br>又过三年，静口无言<br>再过三年，无言即言<br>大道至简，大悟无言</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;修行三年，口出狂言&lt;br&gt;再学三年，不敢妄言&lt;br&gt;又学三年，沉默寡言&lt;br&gt;再过三年，无需多言&lt;br&gt;又过三年，静口无言&lt;br&gt;再过三年，无言即言&lt;br&gt;大道至简，大悟无言&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+    <category term="悟" scheme="http://sysszcl.github.io/tags/%E6%82%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《断舍离》</title>
+    <link href="http://sysszcl.github.io/article/25147e48.html"/>
+    <id>http://sysszcl.github.io/article/25147e48.html</id>
+    <published>2021-12-12T15:54:00.000Z</published>
+    <updated>2021-12-12T16:03:21.256Z</updated>
+    
+    <content type="html"><![CDATA[<p>对于无能为力的事当断<br>生命中无缘的人当舍<br>心中的烦欲杂念当离<br>目光所及皆是回忆<br>心之所想都是过往<br>只有放下执念<br>心才能回归安宁</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;对于无能为力的事当断&lt;br&gt;生命中无缘的人当舍&lt;br&gt;心中的烦欲杂念当离&lt;br&gt;目光所及皆是回忆&lt;br&gt;心之所想都是过往&lt;br&gt;只有放下执念&lt;br&gt;心才能回归安宁&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+    <category term="断" scheme="http://sysszcl.github.io/tags/%E6%96%AD/"/>
+    
+  </entry>
   
   <entry>
     <title>HashMap的底层实现原理</title>
@@ -190,7 +244,7 @@
     <link href="http://sysszcl.github.io/article/1eba8d49.html"/>
     <id>http://sysszcl.github.io/article/1eba8d49.html</id>
     <published>2021-12-02T14:10:00.000Z</published>
-    <updated>2021-12-02T14:15:30.914Z</updated>
+    <updated>2021-12-12T16:04:25.592Z</updated>
     
     <content type="html"><![CDATA[<h5 id="清·丁元英"><a href="#清·丁元英" class="headerlink" title="清·丁元英"></a>清·丁元英</h5><p>本是后山人，<br>偶做前堂客。<br>醉舞经阁半卷书，<br>坐井说天阔。<br>大志戏功名，<br>海斗量福祸。<br>论到囊中羞涩时，怒指乾坤错。</p>]]></content>
     
@@ -205,11 +259,9 @@
     <category term="诗词" scheme="http://sysszcl.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
     
     
-    <category term="生活" scheme="http://sysszcl.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-    <category term="感悟" scheme="http://sysszcl.github.io/tags/%E6%84%9F%E6%82%9F/"/>
-    
     <category term="诗词" scheme="http://sysszcl.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+    <category term="悟" scheme="http://sysszcl.github.io/tags/%E6%82%9F/"/>
     
   </entry>
   
@@ -508,29 +560,6 @@
     <category term="github" scheme="http://sysszcl.github.io/tags/github/"/>
     
     <category term="图片挂掉" scheme="http://sysszcl.github.io/tags/%E5%9B%BE%E7%89%87%E6%8C%82%E6%8E%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100以内所有质数的输出</title>
-    <link href="http://sysszcl.github.io/article/c151f5f7.html"/>
-    <id>http://sysszcl.github.io/article/c151f5f7.html</id>
-    <published>2021-10-27T13:31:00.000Z</published>
-    <updated>2021-11-10T12:55:23.796Z</updated>
-    
-    <content type="html"><![CDATA[<p>这篇文章详细记录了质数求解的基本思路及优化。</p><span id="more"></span><h3 id="1-基本思路"><a href="#1-基本思路" class="headerlink" title="1.基本思路"></a>1.基本思路</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">/*</span></span><br><span class="line"><span class="comment"> 100以内的所有质数的输出</span></span><br><span class="line"><span class="comment"> 质数：素数，只能被1和它本身整除的自然数。 --&gt;从2开始，到这个数-1结束为止，都不能被这个数本身整除。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Prime</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 标识i是否被j除尽，一旦除尽，修改其值</span></span><br><span class="line">    <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">      <span class="comment">//遍历2-100 最小的质数是2</span></span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100</span>;i++) &#123;</span><br><span class="line">          <span class="comment">//从2开始，到这个数-1结束为止，都不能被这个数本身整除。</span></span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++) &#123;</span><br><span class="line">          <span class="comment">//i%j==0判断出不是质数，但是题目条件是求质数</span></span><br><span class="line">          <span class="comment">//i%j!=0亦不能直接判断出结果，当内层循环走完才能判断结果</span></span><br><span class="line">          <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123; <span class="comment">// i被j除尽</span></span><br><span class="line">          isFlag = <span class="keyword">false</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 判断若是还是为真，那么本次循环是质数</span></span><br><span class="line">          <span class="keyword">if</span>(isFlag == <span class="keyword">true</span>) &#123;</span><br><span class="line">         System.out.println(i);  </span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 重要：上面只考虑了是质数的情况，还有不是质数的情况，故需要重置标识</span></span><br><span class="line">          isFlag = <span class="keyword">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="2-算法优化（一）"><a href="#2-算法优化（一）" class="headerlink" title="2.算法优化（一）"></a>2.算法优化（一）</h3><h5 id="优化1：在内层循环判断条件中添加break"><a href="#优化1：在内层循环判断条件中添加break" class="headerlink" title="优化1：在内层循环判断条件中添加break;"></a>优化1：在内层循环判断条件中添加break;</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">100以内的所有质数的输出</span></span><br><span class="line"><span class="comment">质数：素数，只能被1和它本身整除的自然数。 --&gt;从2开始，到这个数-1结束为止，都不能被这个数本身整除。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Prime</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 标识i是否被j除尽，一旦除尽，修改其值</span></span><br><span class="line">    <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">      <span class="comment">//遍历2-100 最小的质数是2</span></span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100</span>;i++) &#123;</span><br><span class="line">          <span class="comment">//从2开始，到这个数-1结束为止，都不能被这个数本身整除。</span></span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;i;j++) &#123;</span><br><span class="line">          <span class="comment">//i%j==0判断出不是质数，但是题目条件是求质数</span></span><br><span class="line">          <span class="comment">//i%j!=0亦不能直接判断出结果，当内层循环走完才能判断结果</span></span><br><span class="line">          <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123; <span class="comment">// i被j除尽</span></span><br><span class="line">          isFlag = <span class="keyword">false</span>;</span><br><span class="line">          <span class="comment">//优化一：只对本身非质数的自然数有效</span></span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 判断若是还是为真，那么本次循环是质数</span></span><br><span class="line">          <span class="keyword">if</span>(isFlag == <span class="keyword">true</span>) &#123;</span><br><span class="line">         System.out.println(i);  </span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 重要：上面只考虑了是质数的情况，还有不是质数的情况，故需要重置标识</span></span><br><span class="line">          isFlag = <span class="keyword">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="3-算法优化（二）"><a href="#3-算法优化（二）" class="headerlink" title="3.算法优化（二）"></a>3.算法优化（二）</h3><h4 id="优化2：j-lt-Math-sqrt-i-质数原理：两端只需要判断一次，注意此时是-，不是-lt"><a href="#优化2：j-lt-Math-sqrt-i-质数原理：两端只需要判断一次，注意此时是-，不是-lt" class="headerlink" title="优化2：j&lt;=Math.sqrt(i);质数原理：两端只需要判断一次，注意此时是=，不是&lt;"></a>优化2：j&lt;=Math.sqrt(i);质数原理：两端只需要判断一次，注意此时是=，不是&lt;</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 100以内的所有质数的输出</span></span><br><span class="line"><span class="comment"> 质数：素数，只能被1和它本身整除的自然数。 --&gt;从2开始，到这个数-1结束为止，都不能被这个数本身整除。</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Prime</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 标识i是否被j除尽，一旦除尽，修改其值</span></span><br><span class="line">    <span class="keyword">boolean</span> isFlag = <span class="keyword">true</span>;</span><br><span class="line">      <span class="comment">//遍历2-100 最小的质数是2</span></span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=<span class="number">100</span>;i++) &#123;</span><br><span class="line">          <span class="comment">//从2开始，到这个数-1结束为止，都不能被这个数本身整除。</span></span><br><span class="line">          <span class="comment">//优化2：j&lt;=Math.sqrt(i);两端只需要判断一次，注意此时是=，不是&lt;</span></span><br><span class="line">          <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j&lt;=Math.sqrt(i);j++) &#123;</span><br><span class="line">          <span class="comment">//i%j==0判断出不是质数，但是题目条件是求质数</span></span><br><span class="line">          <span class="comment">//i%j!=0亦不能直接判断出结果，当内层循环走完才能判断结果</span></span><br><span class="line">          <span class="keyword">if</span>(i%j==<span class="number">0</span>)&#123; <span class="comment">// i被j除尽</span></span><br><span class="line">          isFlag = <span class="keyword">false</span>;</span><br><span class="line">          <span class="comment">//优化一：只对本身非质数的自然数有效</span></span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">          &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 判断若是还是为真，那么本次循环是质数</span></span><br><span class="line">          <span class="keyword">if</span>(isFlag == <span class="keyword">true</span>) &#123;</span><br><span class="line">         System.out.println(i);  </span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">// 重要：上面只考虑了是质数的情况，还有不是质数的情况，故需要重置标识</span></span><br><span class="line">          isFlag = <span class="keyword">true</span>;</span><br><span class="line">          &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这篇文章详细记录了质数求解的基本思路及优化。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="算法" scheme="http://sysszcl.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://sysszcl.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="质数" scheme="http://sysszcl.github.io/tags/%E8%B4%A8%E6%95%B0/"/>
     
   </entry>
   
