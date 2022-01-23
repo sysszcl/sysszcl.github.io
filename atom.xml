@@ -6,7 +6,7 @@
   <link href="http://sysszcl.github.io/atom.xml" rel="self"/>
   
   <link href="http://sysszcl.github.io/"/>
-  <updated>2021-12-12T16:01:41.783Z</updated>
+  <updated>2022-01-23T14:46:05.126Z</updated>
   <id>http://sysszcl.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览器和Session之间关联的技术内幕</title>
+    <link href="http://sysszcl.github.io/article/9a8d88a0.html"/>
+    <id>http://sysszcl.github.io/article/9a8d88a0.html</id>
+    <published>2022-01-23T14:07:00.000Z</published>
+    <updated>2022-01-23T14:46:05.126Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Session技术，底层其实是基于Cookie技术来实现的"><a href="#Session技术，底层其实是基于Cookie技术来实现的" class="headerlink" title="Session技术，底层其实是基于Cookie技术来实现的"></a>Session技术，底层其实是基于Cookie技术来实现的</h3><p>1.浏览器没有任何的cookie信息，浏览器向服务器发起请求。<br>2.服务器第一次使用request.getSession();(第一次使用本方法作用：创建会话对象)，服务器每次创建一个Cookie对象。这个Cookie对象的key永远是：JSESSIONID值是新创建出来的Session的id值。<br>3.通过响应把新创建出来的Session的id值返回给客户端Set-cookie: JSESSIONID=23423234211XAS223XASH233HSDF23;<br>4.浏览器解析到数据，就马上创建出一个Cookie对象。<br>5.浏览器端有了JSESSIONID之后的每次请求，都会把SESSION的id以Cookie的形式发送给服务器。<br>6.浏览器收到请求后再次使用request.getSession();(第二次使用本方法作用：通过Cookie中的id找到服务器之前创建好的Session对象，并返回)</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Session技术，底层其实是基于Cookie技术来实现的&quot;&gt;&lt;a href=&quot;#Session技术，底层其实是基于Cookie技术来实现的&quot; class=&quot;headerlink&quot; title=&quot;Session技术，底层其实是基于Cookie技术来实现的&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="JavaWeb" scheme="http://sysszcl.github.io/categories/JavaWeb/"/>
+    
+    <category term="Session技术内幕" scheme="http://sysszcl.github.io/categories/JavaWeb/Session%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
+    
+    
+    <category term="JavaWeb" scheme="http://sysszcl.github.io/tags/JavaWeb/"/>
+    
+    <category term="Session技术内幕" scheme="http://sysszcl.github.io/tags/Session%E6%8A%80%E6%9C%AF%E5%86%85%E5%B9%95/"/>
+    
+  </entry>
   
   <entry>
     <title>大道至简，大悟无言</title>
@@ -537,29 +565,6 @@
     <category term="java" scheme="http://sysszcl.github.io/tags/java/"/>
     
     <category term="规范" scheme="http://sysszcl.github.io/tags/%E8%A7%84%E8%8C%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决Github网页上图片显示失败的问题</title>
-    <link href="http://sysszcl.github.io/article/711c8c2.html"/>
-    <id>http://sysszcl.github.io/article/711c8c2.html</id>
-    <published>2021-11-07T06:52:00.000Z</published>
-    <updated>2021-11-07T09:00:53.638Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="一、问题"><a href="#一、问题" class="headerlink" title="一、问题"></a>一、问题</h3><p>由于博客网站使用github图床不能显示图片而回忆起在github上图片也从未显示过，于是在CSDN借鉴<a href="https://blog.csdn.net/qq_38232598/article/details/91346392">Antrn</a>博主的方式解决了本问题。</p><span id="more"></span><p>F12打开控制台看一哈，出现一堆红色×。主要报错是Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID</p><p>去查了一下，博主<a href="https://blog.csdn.net/zerooffdate/article/details/80513730">john-zeng</a>这样解释道：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实际上，可以认为，ERR_CERT_COMMON_NAME_INVALID就是用一个错误的域名访问了某个节点的https资源。导致这个错误的原因，基本是：</span><br><span class="line">dns污染</span><br><span class="line">host设置错误</span><br><span class="line">官方更新了dns，但是dns缓存没有被更新，导致错误解析。</span><br></pre></td></tr></table></figure><h3 id="二、解决办法"><a href="#二、解决办法" class="headerlink" title="二、解决办法"></a>二、解决办法</h3><p>主要思路就是使用本地hosts文件对网站进行域名解析，一般的DNS问题都可以通过修改hosts文件来解决，github的CDN域名被污染问题也不例外，同样可以通过修改hosts文件解决，将域名解析直接指向IP地址来绕过DNS的解析，以此解决污染问题。</p><h4 id="2-1-找到URL"><a href="#2-1-找到URL" class="headerlink" title="2.1 找到URL"></a>2.1 找到URL</h4><p>打开github任意未显示图片的网页，使用元素选择器（Ctrl+Shift+C）放在显示不了的图片上，或者在无法显示的图片上右键-检查元素，定位到该图片的标签，那么你得到了它的URL，叫做src属性。<a href="https://avatars2.githubusercontent.com/u/15832957?s=60&amp;v=4">https://avatars2.githubusercontent.com/u/15832957?s=60&amp;v=4</a></p><h4 id="2-2-获取IP地址"><a href="#2-2-获取IP地址" class="headerlink" title="2.2 获取IP地址"></a>2.2 获取IP地址</h4><p>得到上述网址以后打开<a href="https://www.ipaddress.com/">IPAddress.com</a>这个网站，在搜索框输入它的域名，就是https://到com那一部分，俗称二级域名：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avatars2.githubusercontent.com</span><br></pre></td></tr></table></figure><p>回车！！！下面你会看到该域名的信息和IP地址：</p><p>可以看出IP是：151.101.184.133，并且是2019.05.05最后更新的，alright，那么我们就可以使这个IP和域名映射起来。</p><p>（其他如果有挂掉的图片一样使用此方法进行一一映射即可。）</p><p>2.3 修改hosts<br>具体咋映射呢？修改hosts文件！！！本人使用的是windows系统，所以使用Sublime Text打开：C:\Windows\System32\drivers\etc\hosts</p><p>在文件末尾添加：</p><p>可以直接选中以下内容复制粘贴，20210119有效（包括MAC系统）20210123更新</p><h5 id="GitHub-Start"><a href="#GitHub-Start" class="headerlink" title="GitHub Start"></a>GitHub Start</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">140.82.113.3      github.com</span><br><span class="line">140.82.114.20     gist.github.com</span><br><span class="line"></span><br><span class="line">151.101.184.133    assets-cdn.github.com</span><br><span class="line">151.101.184.133    raw.githubusercontent.com</span><br><span class="line">199.232.28.133     raw.githubusercontent.com </span><br><span class="line">151.101.184.133    gist.githubusercontent.com</span><br><span class="line">151.101.184.133    cloud.githubusercontent.com</span><br><span class="line">151.101.184.133    camo.githubusercontent.com</span><br><span class="line">199.232.96.133     avatars.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars0.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars0.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars0.githubusercontent.com </span><br><span class="line">199.232.28.133     avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.108.133    avatars1.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars2.githubusercontent.com</span><br><span class="line">199.232.28.133     avatars2.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars3.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars3.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars4.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars4.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars5.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars5.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars6.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars6.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars7.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars7.githubusercontent.com</span><br><span class="line">151.101.184.133    avatars8.githubusercontent.com</span><br><span class="line">199.232.68.133     avatars8.githubusercontent.com</span><br><span class="line">199.232.96.133     avatars9.githubusercontent.com</span><br></pre></td></tr></table></figure><h5 id="GitHub-End"><a href="#GitHub-End" class="headerlink" title="GitHub End"></a>GitHub End</h5><p>然后保存文件就OK了，至于无法保存，没有修改权限，鼠标右键-属性-安全-修改权限；或将hosts文件复制一份，修改之后，复制到原文件夹替换！</p><h3 id="三、最后说几句"><a href="#三、最后说几句" class="headerlink" title="三、最后说几句"></a>三、最后说几句</h3><p>还可以使用ipconfig/flush对本地DNS缓存进行一次刷新，如果遇到网络异常，可能是DNS缓存的问题，刷新一下，步骤。</p><p>windows开始→运行→输入：CMD 按回车键，打开命令提示符窗口。<br>再输入： ipconfig /flushdns 回车,执行命令，可以重建本地DNS缓存。<br>再附上几个命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipconfig /displaydns # 显示dns缓存 </span><br><span class="line">ipconfig /flushdns # 刷新DNS记录 </span><br><span class="line">ipconfig /renew # 重请从DHCP服务器获得IP </span><br></pre></td></tr></table></figure><p>PS：另外要注意的一点就是，如果图片再次不能显示，只需要及时更新IP就行啦，这波操作不麻烦！！！</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">版权声明：本文为CSDN博主「Antrn」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。</span><br><span class="line">原文链接：https://blog.csdn.net/qq_38232598/article/details/91346392</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;一、问题&quot;&gt;&lt;a href=&quot;#一、问题&quot; class=&quot;headerlink&quot; title=&quot;一、问题&quot;&gt;&lt;/a&gt;一、问题&lt;/h3&gt;&lt;p&gt;由于博客网站使用github图床不能显示图片而回忆起在github上图片也从未显示过，于是在CSDN借鉴&lt;a href=&quot;https://blog.csdn.net/qq_38232598/article/details/91346392&quot;&gt;Antrn&lt;/a&gt;博主的方式解决了本问题。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Github" scheme="http://sysszcl.github.io/categories/Github/"/>
-    
-    
-    <category term="github" scheme="http://sysszcl.github.io/tags/github/"/>
-    
-    <category term="图片挂掉" scheme="http://sysszcl.github.io/tags/%E5%9B%BE%E7%89%87%E6%8C%82%E6%8E%89/"/>
     
   </entry>
   
