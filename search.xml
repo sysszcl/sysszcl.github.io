@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>2022辞旧迎新</title>
+      <link href="/article/2d4997f9.html"/>
+      <url>/article/2d4997f9.html</url>
+      
+        <content type="html"><![CDATA[<p>赶走心中不如意，一切要从今天起</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数学的三行情诗</title>
+      <link href="/article/a611fe2.html"/>
+      <url>/article/a611fe2.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h3><p>算不出<br>你我间的极限<br>我却只在你身边</p><span id="more"></span><h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>与别人而比<br>你可以放大，也可以缩小<br>在我心中，你只是你</p><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>你是未知数<br>我是函数<br>我的心随你而变</p><h3 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h3><p>你是我的一切可导<br>我与你<br>只能连续，不能间断</p><h3 id="无穷"><a href="#无穷" class="headerlink" title="无穷"></a>无穷</h3><p>我对你的情如这1/x<br>你我的距离越来越近<br>我的情也趋于无穷</p><h3 id="最值与极值"><a href="#最值与极值" class="headerlink" title="最值与极值"></a>最值与极值</h3><p>遇见你以后<br>我的心情，没有了最值<br>只有无数个关于你的极值</p><h3 id="收敛"><a href="#收敛" class="headerlink" title="收敛"></a>收敛</h3><p>你突然说的再见<br>让我这相思<br>如何收敛</p><h3 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h3><p>我们之间的关系<br>算了再多的排列组合<br>我也不敢确定</p><h3 id="隐函数"><a href="#隐函数" class="headerlink" title="隐函数"></a>隐函数</h3><p>你隐藏在人海中<br>我，一眼<br>就能看得见</p><h3 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h3><p>经过了无数初等变换<br>你我<br>若只如初见</p><h3 id="概率"><a href="#概率" class="headerlink" title="概率"></a>概率</h3><p>我每天计算着你出现的概率<br>期望，在转角处<br>遇到你</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗词 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 诗词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>浏览器和Session之间关联的技术内幕</title>
       <link href="/article/9a8d88a0.html"/>
       <url>/article/9a8d88a0.html</url>
@@ -14,8 +52,6 @@
       <categories>
           
           <category> JavaWeb </category>
-          
-          <category> Session技术内幕 </category>
           
       </categories>
       
@@ -103,11 +139,11 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> HashMap </tag>
             
             <tag> 底层原理 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -125,16 +161,16 @@
       
       <categories>
           
-          <category> java </category>
+          <category> Java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> Set </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -152,18 +188,18 @@
       
       <categories>
           
-          <category> java </category>
+          <category> Java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> Set </tag>
             
             <tag> List </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -181,7 +217,7 @@
       
       <categories>
           
-          <category> java </category>
+          <category> Java </category>
           
       </categories>
       
@@ -210,8 +246,6 @@
       
       <categories>
           
-          <category> java </category>
-          
           <category> 算法 </category>
           
       </categories>
@@ -219,11 +253,11 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 算法 </tag>
             
             <tag> String </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -248,9 +282,9 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> String基础面试题 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -295,20 +329,18 @@
       
       <categories>
           
-          <category> java </category>
-          
-          <category> 多线程 </category>
+          <category> 面试题 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 面试题 </tag>
             
             <tag> 线程安全单例模式 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -326,8 +358,6 @@
       
       <categories>
           
-          <category> java </category>
-          
           <category> 多线程 </category>
           
       </categories>
@@ -335,11 +365,11 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 面试题 </tag>
             
             <tag> 创建多线程 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -357,20 +387,18 @@
       
       <categories>
           
-          <category> Java </category>
-          
-          <category> 多线程 </category>
+          <category> 面试题 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 面试题 </tag>
             
             <tag> 多线程阻塞方法异同 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -388,8 +416,6 @@
       
       <categories>
           
-          <category> java </category>
-          
           <category> 多线程 </category>
           
       </categories>
@@ -397,11 +423,11 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 面试题 </tag>
             
             <tag> 多线程同步机制异同 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -419,8 +445,6 @@
       
       <categories>
           
-          <category> java </category>
-          
           <category> 多线程 </category>
           
       </categories>
@@ -428,11 +452,11 @@
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 面试题 </tag>
             
             <tag> 多线程安全 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -452,16 +476,14 @@
           
           <category> 面试题 </category>
           
-          <category> java </category>
-          
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 面试题 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -558,16 +580,16 @@
       
       <categories>
           
-          <category> java </category>
+          <category> Java </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> java </tag>
-            
             <tag> 规范 </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       
@@ -592,9 +614,9 @@
       
         <tags>
             
-            <tag> github </tag>
-            
             <tag> 图片挂掉 </tag>
+            
+            <tag> Github </tag>
             
         </tags>
       
