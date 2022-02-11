@@ -1,12 +1,11 @@
 title: sleep()和wait()的异同
 author: 树叶莎莎遮窗棂
 tags:
-  - java
+  - Java
   - 面试题
   - 多线程阻塞方法异同
 categories:
-  - Java
-  - 多线程
+  - 面试题
 abbrlink: de520b17
 date: 2021-12-02 21:35:00
 ---

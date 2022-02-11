@@ -2,8 +2,8 @@ title: 解决Github网页上图片显示失败的问题
 author: 树叶莎莎遮窗棂
 abbrlink: 711c8c2
 tags:
-  - github
   - 图片挂掉
+  - Github
 categories:
   - Github
 date: 2021-11-07 14:52:00

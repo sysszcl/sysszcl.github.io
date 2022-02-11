@@ -1,11 +1,10 @@
 title: synchronized 与 Lock的异同？
 author: 树叶莎莎遮窗棂
 tags:
-  - java
   - 面试题
   - 多线程同步机制异同
+  - Java
 categories:
-  - java
   - 多线程
 abbrlink: b3c95c5f
 date: 2021-12-02 21:28:00
