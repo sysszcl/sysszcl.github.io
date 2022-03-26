@@ -3,8 +3,9 @@ layout: post
 slug: photos
 title: 相册
 noDate: 'true'
-comments: 'true'
-reward: 'true'
+comments: false
+reward: false
+notshow: false
 open_in_new: false
 abbrlink: e26d1860
 ---
