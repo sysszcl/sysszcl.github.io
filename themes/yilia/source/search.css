@@ -127,8 +127,7 @@
 
 .local-search-plugin .local-search-input-cls {
     opacity: .6;
-    /*width: 160px;*/
-    transition: all .3s
+    transition: all .3s;
 }
 
 .local-search-plugin .local-search-input-cls:hover {
@@ -141,7 +140,8 @@
     position: relative;
     left: -30px;
     color: #999;
-    cursor: pointer
+    cursor: pointer;
+    top: 3px;
 }
 
 
