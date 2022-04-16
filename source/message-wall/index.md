@@ -72,7 +72,7 @@ background:url(https://myblog12.qiniu.yansheng.xyz/南台山.jpg) no-repeat cove
                 <h2 id="相遇即是有缘💗">相遇即是有缘💗</h2>
                 <p>🤔既然来了，过来踩一下可好？😝😘</p>
                 <p>
-                    <img src="../images/jingRuoQiuYe.jpg" alt="秋叶之静美">
+                    <img src="https://img-blog.csdnimg.cn/171aa3d84f084e778162c680a699d7c3.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAc3lzc3pjbA==,size_20,color_FFFFFF,t_70,g_se,x_16" alt="秋叶之静美">
                 </p>
                 <h2 id="南台缘🌹">南台缘🌹</h2>
                 <p>献上一首《南台缘》，词曲：陈小奇老师。</p>
