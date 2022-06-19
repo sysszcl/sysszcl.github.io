@@ -1392,7 +1392,7 @@
     
     .highlight {
         /* 方便copy代码按钮（btn-copy）的定位 */
-        position: relative;
+        /* position: relative; */
     }
     
     .btn-copy {
