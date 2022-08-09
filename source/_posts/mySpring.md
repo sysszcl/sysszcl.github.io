@@ -81,7 +81,7 @@ date: 2022-05-29 19:03:00
 
 （2）Spring 创建对象 
 
-（3）Spirng 注入属性
+（3）Spring 注入属性
 
  2、Bean 管理操作有两种方式 
 
@@ -176,7 +176,7 @@ public class Orders {
 
 （1）null 值   <null/>
 
-（2）属性值包含特殊符号  <![CDATA[<<南京>>]]>
+（2）属性值包含特殊符号（xml的文本格式CDATA，此处避免search.xml出错）
 
 2、注入属性-外部 bean 
 
@@ -721,7 +721,7 @@ class UserDaoProxy implements InvocationHandler {
 
 1、Spring 框架一般都是基于 AspectJ 实现 AOP 操作 
 
-（1）AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spirng 框架一起使 用，进行 AOP 操作 
+（1）AspectJ 不是 Spring 组成部分，独立 AOP 框架，一般把 AspectJ 和 Spring 框架一起使 用，进行 AOP 操作 
 
 2、基于 AspectJ 实现 AOP 操作 
 
@@ -1242,6 +1242,7 @@ public class UserService {
 @Transactional 
 
 public class UserService { 
+}
 ```
 
 ##### 事务操作（声明式事务管理参数配置）
@@ -1331,4 +1332,3 @@ public class TxConfig {
         } 
 } 
 ```
-

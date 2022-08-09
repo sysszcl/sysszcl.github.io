@@ -12,14 +12,14 @@ date: 2022-02-11 23:39:00
 ### 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。
 
 ```java
-MinStack minStack = new MinStack();
-minStack.push(-2);
-minStack.push(0);
-minStack.push(-3);
-minStack.min();   --> 返回 -3.
-minStack.pop();
-minStack.top();      --> 返回 0.
-minStack.min();   --> 返回 -2.
+MinStack minStack1 = new MinStack();
+minStack1.push(-2);
+minStack1.push(0);
+minStack1.push(-3);
+minStack1.min();   --> 返回 -3.
+minStack1.pop();
+minStack1.top();      --> 返回 0.
+minStack1.min();   --> 返回 -2.
 ```
 <!-- more -->
 
@@ -55,7 +55,7 @@ class MinStack {
 }
 
 /**
- * Your MinStack object will be instantiated and called as such:
+ * Your MinStack object will be instantiate and called as such:
  * MinStack obj = new MinStack();
  * obj.push(x);
  * obj.pop();
@@ -63,4 +63,3 @@ class MinStack {
  * int param_4 = obj.min();
  */
 ```
-
