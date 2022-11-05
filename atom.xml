@@ -6,7 +6,7 @@
   <link href="http://sysszcl.github.io/atom.xml" rel="self"/>
   
   <link href="http://sysszcl.github.io/"/>
-  <updated>2022-10-23T05:10:28.938Z</updated>
+  <updated>2022-11-05T06:45:46.824Z</updated>
   <id>http://sysszcl.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>春江花月夜</title>
+    <link href="http://sysszcl.github.io/article/8dd4404d.html"/>
+    <id>http://sysszcl.github.io/article/8dd4404d.html</id>
+    <published>2022-11-05T06:42:00.000Z</published>
+    <updated>2022-11-05T06:45:46.824Z</updated>
+    
+    <content type="html"><![CDATA[<p>【作者】张若虚  【朝代】唐</p><p>春江潮水连海平，海上明月共潮生。</p><p>滟滟随波千万里，何处春江无月明！</p><p>江流宛转绕芳甸，月照花林皆似霰；</p><p>空里流霜不觉飞，汀上白沙看不见。</p><p>江天一色无纤尘，皎皎空中孤月轮。</p><span id="more"></span><p>江畔何人初见月？江月何年初照人？</p><p>人生代代无穷已，江月年年望相似。</p><p>不知江月待何人，但见长江送流水。</p><p>白云一片去悠悠，青枫浦上不胜愁。</p><p>谁家今夜扁舟子？何处相思明月楼？</p><p>可怜楼上月裴回，应照离人妆镜台。</p><p>玉户帘中卷不去，捣衣砧上拂还来。</p><p>此时相望不相闻，愿逐月华流照君。</p><p>鸿雁长飞光不度，鱼龙潜跃水成文。</p><p>昨夜闲潭梦落花，可怜春半不还家。</p><p>江水流春去欲尽，江潭落月复西斜。</p><p>斜月沉沉藏海雾，碣石潇湘无限路。</p><p>不知乘月几人归，落月摇情满江树。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;【作者】张若虚  【朝代】唐&lt;/p&gt;
+&lt;p&gt;春江潮水连海平，海上明月共潮生。&lt;/p&gt;
+&lt;p&gt;滟滟随波千万里，何处春江无月明！&lt;/p&gt;
+&lt;p&gt;江流宛转绕芳甸，月照花林皆似霰；&lt;/p&gt;
+&lt;p&gt;空里流霜不觉飞，汀上白沙看不见。&lt;/p&gt;
+&lt;p&gt;江天一色无纤尘，皎皎空中孤月轮。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/categories/%E8%AF%97%E8%AF%8D/"/>
+    
+    
+    <category term="诗词" scheme="http://sysszcl.github.io/tags/%E8%AF%97%E8%AF%8D/"/>
+    
+  </entry>
   
   <entry>
     <title>争做有理想、敢担当、能吃苦、肯奋斗的新时代好青年</title>
@@ -511,23 +537,6 @@
     
     
     <category term="MyBatis" scheme="http://sysszcl.github.io/tags/MyBatis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java.sql.SQLException Unknown system variable query_cache_size</title>
-    <link href="http://sysszcl.github.io/article/cd72f990.html"/>
-    <id>http://sysszcl.github.io/article/cd72f990.html</id>
-    <published>2022-06-19T08:48:29.000Z</published>
-    <updated>2022-06-19T08:49:14.887Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="java-sql-SQLException-Unknown-system-variable-‘query-cache-size‘"><a href="#java-sql-SQLException-Unknown-system-variable-‘query-cache-size‘" class="headerlink" title="java.sql.SQLException: Unknown system variable ‘query_cache_size‘"></a>java.sql.SQLException: Unknown system variable ‘query_cache_size‘</h3><span id="more"></span><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLException: Unknown system variable <span class="string">&#x27;query_cache_size&#x27;</span></span><br><span class="line">at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:<span class="number">964</span>)</span><br><span class="line">at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:<span class="number">3973</span>)</span><br><span class="line">at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:<span class="number">3909</span>)</span><br><span class="line">at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:<span class="number">2527</span>)</span><br><span class="line">at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:<span class="number">2680</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:<span class="number">2497</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:<span class="number">2455</span>)</span><br><span class="line">at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:<span class="number">1369</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.loadServerVariables(ConnectionImpl.java:<span class="number">3777</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.initializePropsFromServer(ConnectionImpl.java:<span class="number">3240</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:<span class="number">2249</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:<span class="number">2035</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.&lt;init&gt;(ConnectionImpl.java:<span class="number">790</span>)</span><br><span class="line">at com.mysql.jdbc.JDBC4Connection.&lt;init&gt;(JDBC4Connection.java:<span class="number">47</span>)</span><br><span class="line">at sun.reflect.GeneratedConstructorAccessor23.newInstance(Unknown Source)</span><br><span class="line">at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:<span class="number">45</span>)</span><br><span class="line">at java.lang.reflect.Constructor.newInstance(Constructor.java:<span class="number">423</span>)</span><br><span class="line">at com.mysql.jdbc.Util.handleNewInstance(Util.java:<span class="number">425</span>)</span><br><span class="line">at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:<span class="number">400</span>)</span><br><span class="line">at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:<span class="number">330</span>)</span><br><span class="line">at com.mchange.v2.c3p0.DriverManagerDataSource.getConnection(DriverManagerDataSource.java:<span class="number">175</span>)</span><br><span class="line">at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:<span class="number">220</span>)</span><br><span class="line">at com.mchange.v2.c3p0.WrapperConnectionPoolDataSource.getPooledConnection(WrapperConnectionPoolDataSource.java:<span class="number">206</span>)</span><br><span class="line">at com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager.acquireResource(C3P0PooledConnectionPool.java:<span class="number">203</span>)</span><br><span class="line">at com.mchange.v2.resourcepool.BasicResourcePool.doAcquire(BasicResourcePool.java:<span class="number">1138</span>)</span><br><span class="line">at com.mchange.v2.resourcepool.BasicResourcePool.doAcquireAndDecrementPendingAcquiresWithinLockOnSuccess(BasicResourcePool.java:<span class="number">1125</span>)</span><br><span class="line">at com.mchange.v2.resourcepool.BasicResourcePool.access$<span class="number">700</span>(BasicResourcePool.java:<span class="number">44</span>)</span><br><span class="line">at com.mchange.v2.resourcepool.BasicResourcePool$ScatteredAcquireTask.run(BasicResourcePool.java:<span class="number">1870</span>)</span><br></pre></td></tr></table></figure><p>原因服务器中装的数据库版本是8.0及以上版本（版本高）<br>持久层中数据库驱动是5.7及以上（版本低）</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;<span class="number">8.0</span><span class="number">.11</span>&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h3 id="Eclipse中使用MySql遇到：Loading-class-com-mysql-jdbc-Driver’-This-is-deprecated-The-new-driver-class-is…"><a href="#Eclipse中使用MySql遇到：Loading-class-com-mysql-jdbc-Driver’-This-is-deprecated-The-new-driver-class-is…" class="headerlink" title="Eclipse中使用MySql遇到：Loading class `com.mysql.jdbc.Driver’. This is deprecated. The new driver class is…"></a>Eclipse中使用MySql遇到：Loading class `com.mysql.jdbc.Driver’. This is deprecated. The new driver class is…</h3><p>遇到的问题如下：</p><p>原来是因为使用最新的驱动包中<code>com.mysql.jdbc.Driver</code>类已经过时，新的<code>com.mysql.cj.jdbc.Driver</code>通过SPI自动注册，不再需要手动加载驱动类)</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Loading <span class="class"><span class="keyword">class</span> `<span class="title">com</span>.<span class="title">mysql</span>.<span class="title">jdbc</span>.<span class="title">Driver</span>&#x27;. <span class="title">This</span> <span class="title">is</span> <span class="title">deprecated</span>. <span class="title">The</span> <span class="title">new</span> <span class="title">driver</span> <span class="title">class</span> <span class="title">is</span> `<span class="title">com</span>.<span class="title">mysql</span>.<span class="title">cj</span>.<span class="title">jdbc</span>.<span class="title">Driver</span>&#x27;. <span class="title">The</span> <span class="title">driver</span> <span class="title">is</span> <span class="title">automatically</span> <span class="title">registered</span> <span class="title">via</span> <span class="title">the</span> <span class="title">SPI</span> <span class="title">and</span> <span class="title">manual</span> <span class="title">loading</span> <span class="title">of</span> <span class="title">the</span> <span class="title">driver</span> <span class="title">class</span> <span class="title">is</span> <span class="title">generally</span> <span class="title">unnecessary</span>.</span></span><br></pre></td></tr></table></figure><p>解决办法： 使用<code>com.mysql.cj.jdbc.Driver</code>类替换<code>com.mysql.jdbc.Driver</code>类</p><p>但是后面还有一个如下的问题：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The server time zone value <span class="string">&#x27;ÖÐ¹ú±ê×¼Ê±¼ä&#x27;</span> is unrecognized or represents more than one time zone. <span class="function">You must configure either the server or JDBC <span class="title">driver</span> <span class="params">(via the serverTimezone configuration property)</span> to use a more specifc time zone value <span class="keyword">if</span> you want to utilize time zone support.</span></span><br></pre></td></tr></table></figure><p>需要在数据库 URL中设置serverTimezone属性：（就是代码第八行）</p><p>static final String DB_URL = “jdbc:mysql://localhost:3306/RUNOOB” + “?serverTimezone=GMT%2B8”; 这里的 GMT%2B8 代表是东八区。</p><p>jdbc:mysql://localhost:3306/javamysql 端口号后面是你的数据库</p><p>最后问题解决了，如果有遇到相同问题的小伙伴可以参考一下！</p><h3 id="Unescaped-amp-or-nonterminated-character-entity-reference"><a href="#Unescaped-amp-or-nonterminated-character-entity-reference" class="headerlink" title="Unescaped &amp; or nonterminated character/entity reference"></a>Unescaped &amp; or nonterminated character/entity reference</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">提示Unescaped &amp; or nonterminated character/entity reference</span><br><span class="line">因为&amp;是特殊字符，解决方法是：&amp;改写成&amp;amp;复制代码</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;h3 id=&quot;java-sql-SQLException-Unknown-system-variable-‘query-cache-size‘&quot;&gt;&lt;a href=&quot;#java-sql-SQLException-Unknown-system-variable-‘query-cache-size‘&quot; class=&quot;headerlink&quot; title=&quot;java.sql.SQLException: Unknown system variable ‘query_cache_size‘&quot;&gt;&lt;/a&gt;java.sql.SQLException: Unknown system variable ‘query_cache_size‘&lt;/h3&gt;</summary>
-    
-    
-    
     
   </entry>
   
