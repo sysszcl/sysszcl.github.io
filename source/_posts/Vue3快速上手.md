@@ -1,10 +1,9 @@
 title: Vue3快速上手
 author: 树叶莎莎遮窗棂
 tags:
-  - Vue3.0基础
-  - ''
+  - Vue3基础
 categories:
-  - Vue3.0
+  - Vue
 abbrlink: 7374ccd5
 date: 2022-04-07 23:58:00
 ---
