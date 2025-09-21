@@ -1,0 +1,131 @@
+<%- partial('_partial/head') %>
+
+    <body>
+        <div id="container" q-class="show:isCtnShow">
+            <canvas id="anm-canvas" class="anm-canvas"></canvas>
+            <div class="mymenucontainer" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="left-col" q-class="show:isShow">
+                <%- partial('_partial/left-col', null, {cache: !config.relative_link}) %>
+            </div>
+            <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+                <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %>
+                    <!-- 顶栏 -->
+                    <% if(!theme.search) { %>
+                        <div class="page-header" style="">
+                            <%# 今日诗词网址： https://www.jinrishici.com/ %>
+                                <span>🍻  
+                        <span id="jinrishici-sentence" title="今日诗词">正在加载今日诗词....</span>
+                                </span>
+                                <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+
+                                <%# 《集成本地搜索 %>
+                                    <script type="text/javascript" src="/js/search.js"></script>
+                                    <span id="local-search" class="local-search local-search-plugin" style="">
+                      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+                      <i id="local-search-icon-search" class="icon" aria-hidden="true" title="站内搜索">🔍</i>
+                      <div id="local-search-result" class="local-search-result-cls"></div>
+                    </span>
+
+                                    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+                                    <script>
+                                        if ($('.local-search').size()) {
+                                            $.getScript('/js/search.js', function() {
+                                                searchFunc("/search.xml", 'local-search-input', 'local-search-result');
+                                            });
+                                        }
+                                    </script>
+                                    <%# 集成本地搜索》 %>
+                        </div>
+                        <% } %>
+
+                            <!-- 顶栏 -->
+                            <div id="wrapper" class="body-wrap">
+                                <div class="menu-l">
+                                    <div class="canvas-wrap">
+                                        <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+                                    </div>
+                                    <div id="js-content" class="content-ll">
+                                        <%- body %>
+                                    </div>
+                                </div>
+                            </div>
+                            <%- partial('_partial/footer') %>
+            </div>
+            <%- partial('_partial/after-footer') %>
+                <%- partial('_partial/tools') %>
+                    <%- partial('_partial/viewer') %>
+        </div>
+
+
+        <!--动态线条背景-->
+        <% if (theme.canvas_nest.enable){ %>
+            <script type="text/javascript" color="<%=theme.canvas_nest.color %>" opacity="<%=theme.canvas_nest.opacity %>" zIndex="<%=theme.canvas_nest.zIndex %>" count="<%=theme.canvas_nest.count %>" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+            </script>
+            <% } %>
+                <!--彩带2.自动飘动-->
+                <% if (theme.ribbon_flow){ %>
+                    <!-- <script src="https://g.joyinshare.com/hc/piao.js" type="text/javascript"></script> -->
+                    <script type="text/javascript" src="/js/ribbon_flow.js"></script>
+                    <% } %>
+                        <!-- 雪花特效3 -->
+                        <% if (theme.snow3){ %>
+                            <script type="text/javascript" src="/js/snow3.js"></script>
+                            <% } %>
+                                <!--单击显示文字-->
+                                <% if (theme.click_show_text){ %>
+                                    <script type="text/javascript" src="/js/click_show_text.js"></script>
+                                    <% } %>
+                                        <!-- 雪花特效2 -->
+                                        <!-- 引入jQuery -->
+                                        <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script> -->
+
+                                        <% if (theme.snow2){ %>
+                                            <script type="text/javascript" src="/js/snow2.js"></script>
+                                            <% } %>
+
+                                                <!-- 《页面点击小红心 -->
+                                                <% if (theme.love){ %>
+                                                    <script type="text/javascript" src="/js/love.js"></script>
+                                                    <% } %>
+                                                        <!-- 页面点击小红心》 -->
+                                                        <!-- 代码块复制功能 -->
+                                                        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+                                                        <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+                                                        <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+                                                        <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
+    </body>
+    <!-- 添加折叠脚本 -->
+    <script>
+        var hide = false;
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            if (hide == false) {
+                $(".left-col").css('display', 'none');
+                $(".mid-col").css("left", 6);
+                $(".tools-col").css('display', 'none');
+                $(".tools-col.hide").css('display', 'none');
+                hide = true;
+
+                $(".mymenucontainer").css('left', '0');
+
+            } else {
+                $(".left-col").css('display', '');
+                $(".mid-col").css("left", 300);
+                $(".tools-col").css('display', '');
+                $(".tools-col.hide").css('display', '');
+                hide = false;
+
+                $(".mymenucontainer").css('left', '260px');
+
+            }
+        }
+    </script>
+    <!-- 添加折叠脚本 -->
+
+    </html>

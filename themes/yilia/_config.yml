@@ -1,0 +1,225 @@
+# Header
+
+# Site
+title: 树叶莎莎遮窗棂的个人博客
+subtitle: 当你要放弃的时候想想当初为什么坚持到现在！
+description: Hello,here is yuanquan'blog.
+keywords:
+author: 树叶莎莎遮窗棂
+language: 
+timezone: 
+
+menu:
+  主页: /
+  分类: /categories
+  归档: /archives
+  相册: /photos
+  留言墙: /message-wall
+# Add a custom footer
+
+# SubNav
+subnav:
+  github: "https://github.com/sysszcl"
+  weibo: "#"
+  rss: "#"
+  zhihu: "#"
+  #qq: "#"
+  #weixin: "#"
+  #jianshu: "#"
+  #douban: "#"
+  #segmentfault: "#"
+  #bilibili: "#"
+  #acfun: "#"
+  #mail: "mailto:litten225@qq.com"
+  #facebook: "#"
+  #google: "#"
+  #twitter: "#"
+  #linkedin: "#"
+
+rss: /atom.xml
+
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+root: /
+
+# Content
+
+# 文章太长，截断按钮文字
+excerpt_link: more
+# 文章卡片右下角常驻链接，不需要请设置为false
+show_all_link: '展开全文'
+# 数学公式
+mathjax: false
+# 是否在新窗口打开链接
+open_in_new: false
+
+# 打赏
+# 打赏type设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+reward_type: 1
+# 打赏wording
+reward_wording: '谢谢你请我吃糖果'
+# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
+alipay: /assets/img/alipay.jpg
+# 微信二维码图片地址
+weixin: /assets/img/wechatpay.jpg
+
+# 目录
+# 目录设定：0-不显示目录； 1-文章对应的md文件里有toc:true属性，才有目录； 2-所有文章均显示目录
+toc: 1
+# 根据自己的习惯来设置，如果你的目录标题习惯有标号，置为true即可隐藏hexo重复的序号；否则置为false
+toc_hide_index: true
+# 目录为空时的提示
+toc_empty_wording: '目录，不存在的…'
+
+# 是否有快速回到顶部的按钮
+top: true
+
+# Miscellaneous
+baidu_analytics: 'cec10bcf76ec1ada6d66131fd90cfee8'
+google_analytics: ''
+favicon: /images/avatar.ico
+
+#你的头像url
+avatar: /images/avatar.jpg
+
+#是否开启分享
+share_jia: true
+
+#评论：1、多说；2、网易云跟帖；3、畅言；4、Disqus；5、Gitment
+#不需要使用某项，直接设置值为false，或注释掉
+#具体请参考wiki：https://github.com/litten/hexo-theme-yilia/wiki/
+
+#1、多说
+duoshuo: false
+
+#2、网易云跟帖
+wangyiyun: false
+
+#3、畅言
+changyan_appid: false
+changyan_conf: false
+
+#4、Disqus 在hexo根目录的config里也有disqus_shortname字段，优先使用yilia的
+disqus: false
+
+#5、Gitment
+gitment_owner: false      #你的 GitHub ID
+gitment_repo: ''          #存储评论的 repo
+gitment_oauth:
+  client_id: ''           #client ID
+  client_secret: ''       #client secret
+
+#6、Valine https://valine.js.org
+valine: 
+ appid: 'qhvm8DnpSgNEc9Ex864lKhDn-gzGzoHsz'  #Leancloud应用的appId
+ appkey: '7O9twXmJYPHRwg4dz6H2kWgR'  #Leancloud应用的appKey
+ verify: false #验证码
+ notify: false #评论回复提醒
+ avatar: retro #评论列表头像样式：''/mm/identicon/monsterid/wavatar/retro/hide
+ #头像类型可见： https://valine.js.org/avatar.html
+ placeholder: Just go go #评论框占位符  
+
+
+# 样式定制 - 一般不需要修改，除非有很强的定制欲望…
+style:
+  # 头像上面的背景颜色
+  header: '#4d4d4d'
+  # 右滑板块背景
+  slider: 'linear-gradient(200deg,#a0cfe4,#e8c37e)'
+
+# slider的设置
+slider:
+  # 是否默认展开tags板块
+  showTags: false
+
+# 智能菜单
+# 如不需要，将该对应项置为false
+# 比如
+#smart_menu:
+#  friends: false
+smart_menu:
+  innerArchive: '所有文章'
+  friends: '友链'
+  aboutme: '关于我'
+
+friends:
+  荷塘月色: https://yansheng836.github.io/
+  空心: http://www.tobetester.top/
+  牛魔王: http://119.91.144.113:9090/
+  余杭子曰: https://www.yuque.com/robinson
+  前端算法:  https://alexgy1.github.io/learn-algo-and-ds/
+  蓝桉: https://lanan.blog.csdn.net/?type=blog
+
+aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+
+# 设置站点建立时间
+since: 2013
+
+# 是否开启字数统计
+#不需要使用，直接设置值为false，或注释掉
+word_count: true
+
+#头像是否旋转(如果不要旋转取false)
+avatarrotation: true
+
+# 页面点击小红心
+love: true
+
+# 雪花特效2
+# snow2: true
+# 雪花特效2
+snow2: 
+ enabled: true
+
+
+# 鼠标点击显示文字
+click_show_text: true
+
+# 雪花特效3
+snow3: true
+
+# 彩带2.自动飘动
+ribbon_flow: true
+
+# https://github.com/hustcc/canvas-nest.js
+# 配置详见： https://github.com/hustcc/canvas-nest.js#configuration
+# 动态线条效果，会向鼠标集中
+canvas_nest:
+  enable: true
+  color: '9, 201, 255'        # color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  pointColor: '255,255,255'     # color of points, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
+  opacity: '1'               # the opacity of line (0~1), default: 0.5.
+  count: '99'                  # the number of lines, default: 99.
+  zIndex: '-1'                 # z-index property of the background, default: -1.
+
+# 是否开启访问量统计功能(不蒜子)
+busuanzi:
+ enable: true
+
+# 心知天气(如果不用为false):https://www.seniverse.com
+#xinzhi_weather: false
+
+ # 版权声明
+#在需要进行版权声明的文章的md文件头部，设置属性declare: true。
+#版权基础设定：0-关闭声明； 1-文章对应的md文件里有declare: true属性，才有版权声明； 2-所有文章均有版权声明
+declare:
+  declare_type: 1
+  licensee_url: https://creativecommons.org/licenses/by-nc-sa/4.0/        #当前应用的版权协议地址。
+  licensee_name: 'CC BY-NC-SA 4.0'                                        #版权协议的名称
+  licensee_alias: '知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议'       # alias别名
+  licensee_img: https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png    #版权协议的Logo
+
+
+# Tab Title Change | 标签页标题切换
+tab_title_change: 
+  enable: true
+  left_tab_title: '(つェ⊂) 我藏好了哦~ '
+  return_tab_title: '(*´∇｀*) 被你发现啦~ '
+
+reward:
+  enable: true
+  comment: 谢谢你请我吃糖果！
+  wechatpay: /images/wechatpay.png
+  alipay: /images/alipay.jpg
+
