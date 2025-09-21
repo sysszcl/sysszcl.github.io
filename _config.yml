@@ -115,7 +115,7 @@ theme: yilia
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy: 
   type: git
-  repository: git@github.com:sysszcl/sysszcl.github.io.git
+  repository: https://github.com/sysszcl/sysszcl.github.io.git
   branch: master
 
 # yilia主题所需新增内容
