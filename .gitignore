@@ -3,8 +3,8 @@ Thumbs.db
 db.json
 *.log
 node_modules/
-knowledge/
 public/
 .deploy*/
+knowledge/
 #ignored the useless themes
 /themes/landscape/
