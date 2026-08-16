@@ -407,13 +407,6 @@
 
   
   <url>
-    <loc>https://sysszcl.github.io/tags/Algorithm/</loc>
-    <lastmod>2026-08-16</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sysszcl.github.io/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -428,14 +421,14 @@
   </url>
   
   <url>
-    <loc>https://sysszcl.github.io/tags/Github/</loc>
+    <loc>https://sysszcl.github.io/tags/Algorithm/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sysszcl.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
+    <loc>https://sysszcl.github.io/tags/Github/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -456,7 +449,7 @@
   </url>
   
   <url>
-    <loc>https://sysszcl.github.io/tags/CSS/</loc>
+    <loc>https://sysszcl.github.io/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -470,6 +463,13 @@
   </url>
   
   <url>
+    <loc>https://sysszcl.github.io/tags/Mysql/</loc>
+    <lastmod>2026-08-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sysszcl.github.io/tags/RabbitMQ/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -477,7 +477,7 @@
   </url>
   
   <url>
-    <loc>https://sysszcl.github.io/tags/Mysql/</loc>
+    <loc>https://sysszcl.github.io/tags/CSS/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -528,14 +528,14 @@
 
   
   <url>
-    <loc>https://sysszcl.github.io/categories/Algorithm/</loc>
+    <loc>https://sysszcl.github.io/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sysszcl.github.io/categories/%E9%9D%A2%E8%AF%95%E9%A2%98/</loc>
+    <loc>https://sysszcl.github.io/categories/Algorithm/</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
