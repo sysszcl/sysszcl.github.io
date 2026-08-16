@@ -1,31 +1,86 @@
-// A local search script with the help of hexo-generator-search
-// Copyright (C) 2015 
-// Joseph Pan <http://github.com/wzpan>
-// Shuhao Mao <http://github.com/maoshuhao>
-// This library is free software; you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as
-// published by the Free Software Foundation; either version 2.1 of the
-// License, or (at your option) any later version.
-// 
-// This library is distributed in the hope that it will be useful, but
-// WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public
-// License along with this library; if not, write to the Free Software
-// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
-// 02110-1301 USA
-// 
+/**
+ * 站内搜索 - 重构增强版
+ * 基于hexo-generator-search，改进：防抖、相关度排序、中文优化、移动端支持
+ */
 
 var searchFunc = function(path, search_id, content_id) {
     'use strict';
-    var BTN = "<i id='local-search-close'>x</i>";
+
+    // ========== 工具函数 ==========
+
+    // 防抖
+    function debounce(fn, delay) {
+        var timer = null;
+        return function() {
+            var ctx = this, args = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function() {
+                fn.apply(ctx, args);
+            }, delay);
+        };
+    }
+
+    // 转义正则特殊字符
+    function escapeRegex(str) {
+        return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // 高亮关键词（支持HTML安全输出）
+    function highlightKeyword(text, keywords) {
+        if (!text) return '';
+        var result = text;
+        keywords.forEach(function(kw) {
+            if (!kw) return;
+            var reg = new RegExp(escapeRegex(kw), 'gi');
+            result = result.replace(reg, function(match) {
+                return '<em class="search-keyword">' + match + '</em>';
+            });
+        });
+        return result;
+    }
+
+    // 智能截取摘要（以第一个关键词位置为中心，取前后字符）
+    function getExcerpt(content, keywords, len) {
+        len = len || 120;
+        if (!content) return '';
+
+        var lower = content.toLowerCase();
+        var firstPos = -1;
+
+        // 找到第一个关键词出现的位置
+        for (var i = 0; i < keywords.length; i++) {
+            if (!keywords[i]) continue;
+            var pos = lower.indexOf(keywords[i]);
+            if (pos !== -1 && (firstPos === -1 || pos < firstPos)) {
+                firstPos = pos;
+            }
+        }
+
+        if (firstPos === -1) {
+            // 没有匹配到内容中的关键词，从开头截取
+            return content.substring(0, len);
+        }
+
+        // 以关键词位置为中心截取
+        var start = Math.max(0, firstPos - 30);
+        var end = Math.min(content.length, start + len);
+        var excerpt = '';
+
+        if (start > 0) excerpt += '...';
+        excerpt += content.substring(start, end);
+        if (end < content.length) excerpt += '...';
+
+        return excerpt;
+    }
+
+    // ========== 加载搜索数据 ==========
+
+    var BTN = "<i id='local-search-close'>&times;</i>";
+
     $.ajax({
         url: path,
         dataType: "xml",
         success: function(xmlResponse) {
-            // get the contents from search data
             var datas = $("entry", xmlResponse).map(function() {
                 return {
                     title: $("title", this).text(),
@@ -37,108 +92,199 @@ var searchFunc = function(path, search_id, content_id) {
             var $input = document.getElementById(search_id);
             var $resultContent = document.getElementById(content_id);
 
-            $input.addEventListener('input', function() {
-                var str = '<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length <= 0) {
+            // ========== 搜索逻辑 ==========
+
+            var doSearch = debounce(function() {
+                var inputValue = $input.value.trim();
+                var str = '';
+                $resultContent.innerHTML = '';
+
+                if (inputValue.length <= 0) {
                     return;
                 }
-                // perform local searching
+
+                var keywords = inputValue.toLowerCase().split(/[\s\-]+/).filter(function(k) {
+                    return k.length > 0;
+                });
+
+                if (keywords.length === 0) return;
+
+                // 搜索并计算相关度
+                var results = [];
+
                 datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
                     if (!data.title || data.title.trim() === '') {
                         data.title = "Untitled";
                     }
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+
+                    var data_title = data.title.trim();
+                    var data_title_lower = data_title.toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g, "");
+                    var data_content_lower = data_content.toLowerCase();
                     var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty contents
-                    if (data_content !== '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
 
-                            if (index_title < 0 && index_content < 0) {
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                                // content_index.push({index_content:index_content, keyword_len:keyword_len});
+                    var score = 0;
+                    var titleMatch = false;
+                    var contentMatch = false;
+                    var matchCount = 0;
+
+                    keywords.forEach(function(keyword) {
+                        var titleIdx = data_title_lower.indexOf(keyword);
+                        var contentIdx = data_content_lower.indexOf(keyword);
+
+                        if (titleIdx !== -1) {
+                            titleMatch = true;
+                            score += 10; // 标题匹配权重最高
+
+                            // 完全匹配标题权重额外加成
+                            if (data_title_lower === keyword) {
+                                score += 20;
                             }
-                        });
-                    } else {
-                        isMatch = false;
-                    }
-                    // show search results
-                    if (isMatch) {
-                        str += "<li><a href='" + data_url +
-                            "' class='search-result-title'>" + data_title + "</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g, "");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-
-                            if (start < 0) {
-                                start = 0;
+                            // 标题开头匹配加成
+                            if (titleIdx === 0) {
+                                score += 5;
                             }
-
-                            if (start == 0) {
-                                end = 100;
-                            }
-
-                            if (end > content.length) {
-                                end = content.length;
-                            }
-
-                            var match_content = content.substr(start, end);
-
-                            // highlight all keywords
-                            keywords.forEach(function(keyword) {
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS,
-                                    "<em class=\"search-keyword\">" +
-                                    keyword + "</em>");
-                            });
-
-                            str += "<p class=\"search-result\">" + match_content +
-                                "...</p>"
                         }
-                        str += "</li>";
+
+                        if (contentIdx !== -1) {
+                            contentMatch = true;
+                            score += 2; // 内容匹配基础分
+                            matchCount++;
+
+                            // 关键词在内容中出现多次，额外加分
+                            var tempContent = data_content_lower;
+                            var occurrences = 0;
+                            var searchPos = 0;
+                            while ((searchPos = tempContent.indexOf(keyword, searchPos)) !== -1) {
+                                occurrences++;
+                                searchPos += keyword.length;
+                                if (occurrences >= 5) break; // 最多计5次
+                            }
+                            score += occurrences * 1;
+                        }
+                    });
+
+                    // 所有关键词必须至少在标题或内容中出现
+                    if (titleMatch || contentMatch) {
+                        results.push({
+                            title: data_title,
+                            content: data_content,
+                            url: data_url,
+                            score: score
+                        });
                     }
                 });
-                str += "</ul>";
-                if (str.indexOf('<li>') === -1) {
-                    return $resultContent.innerHTML = BTN +
-                        "<ul><span class='local-search-empty'>没有找到内容，更换下搜索词试试吧~<span></ul>";
+
+                // 按相关度降序排序
+                results.sort(function(a, b) {
+                    return b.score - a.score;
+                });
+
+                // 最多显示20条
+                var displayResults = results.slice(0, 20);
+
+                if (displayResults.length === 0) {
+                    $resultContent.innerHTML = BTN +
+                        '<div class="search-result-list" style="padding: 0;">' +
+                        '<span class="local-search-empty">没有找到相关内容，换个关键词试试吧~</span>' +
+                        '</div>';
+                    return;
                 }
+
+                // 状态栏
+                str = '<div class="search-status-bar">' +
+                    '找到 <span class="search-count">' + results.length + '</span> 个相关结果' +
+                    (results.length > 20 ? '（显示前 20 条）' : '') +
+                    '</div>';
+
+                str += '<ul class="search-result-list">';
+
+                displayResults.forEach(function(item) {
+                    var excerpt = getExcerpt(item.content, keywords, 120);
+                    var highlightedExcerpt = highlightKeyword(excerpt, keywords);
+                    var highlightedTitle = highlightKeyword(item.title, keywords);
+
+                    str += '<li>' +
+                        '<a href="' + item.url + '" class="search-result-title">' + highlightedTitle + '</a>' +
+                        '<p class="search-result">' + highlightedExcerpt + '</p>' +
+                        '<span class="search-result-url">' + item.url + '</span>' +
+                        '</li>';
+                });
+
+                str += '</ul>';
                 $resultContent.innerHTML = BTN + str;
+
+            }, 250); // 250ms 防抖
+
+            $input.addEventListener('input', doSearch);
+
+            // ESC 键关闭搜索结果
+            $input.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' || e.keyCode === 27) {
+                    $input.value = '';
+                    $resultContent.innerHTML = '';
+                    $input.blur();
+                }
             });
+        },
+        error: function(xhr, status, error) {
+            console.error('搜索数据加载失败:', error);
+            var $resultContent = document.getElementById(content_id);
+            $resultContent.innerHTML = BTN +
+                '<div class="search-result-list" style="padding: 0;">' +
+                '<span class="local-search-empty">搜索数据加载失败，请刷新重试</span>' +
+                '</div>';
         }
     });
+
+    // ========== 事件绑定 ==========
+
+    // SVG 图标模板
+    var SVG_SEARCH = '<svg viewBox="0 0 24 24" width="16" height="16"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    var SVG_CLOSE = '<svg viewBox="0 0 24 24" width="16" height="16"><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18" y1="6" x2="6" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+    // 关闭按钮
     $(document).on('click', '#local-search-close', function() {
         $('#local-search-input').val('');
         $('#local-search-result').html('');
     });
-    $(document).on('focus', '#local-search', function() {
-        $('#local-search-icon-search').html('❌');
-        $('#local-search-icon-search').attr('id', 'local-search-icon-close');
-        //console.log("66666");
+
+    // 搜索图标切换：聚焦时切换为关闭图标
+    $(document).on('focus', '#local-search-input', function() {
+        var $icon = $('#local-search-icon-search');
+        if ($icon.length) {
+            $icon.html(SVG_CLOSE)
+                  .attr('id', 'local-search-icon-close')
+                  .removeClass('search-icon-search')
+                  .addClass('search-icon-close');
+        }
     });
+
+    $(document).on('blur', '#local-search-input', function() {
+        if (!$(this).val() || $(this).val().trim() === '') {
+            var $icon = $('#local-search-icon-close');
+            if ($icon.length) {
+                $icon.html(SVG_SEARCH)
+                      .attr('id', 'local-search-icon-search')
+                      .removeClass('search-icon-close')
+                      .addClass('search-icon-search');
+            }
+        }
+    });
+
     $(document).on('click', '#local-search-icon-close', function() {
         $('#local-search-input').val('');
         $('#local-search-result').html('');
-        $('#local-search-icon-close').html('🔍');
-        $('#local-search-icon-close').attr('id', 'local-search-icon-search');
-        //console.log("1111");
+        $(this).html(SVG_SEARCH)
+               .attr('id', 'local-search-icon-search')
+               .removeClass('search-icon-close')
+               .addClass('search-icon-search');
     });
-}
+
+    // 点击页面其他区域关闭搜索结果
+    $(document).on('click', function(e) {
+        if (!$(e.target).closest('.local-search').length) {
+            $('#local-search-result').html('');
+        }
+    });
+};
