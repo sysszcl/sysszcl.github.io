@@ -6,7 +6,7 @@
   <link href="http://sysszcl.github.io/atom.xml" rel="self"/>
   
   <link href="http://sysszcl.github.io/"/>
-  <updated>2025-09-21T14:17:17.572Z</updated>
+  <updated>2026-11-02T10:18:29.345Z</updated>
   <id>http://sysszcl.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正向代理与反向代理</title>
+    <link href="http://sysszcl.github.io/article/a2b01e97.html"/>
+    <id>http://sysszcl.github.io/article/a2b01e97.html</id>
+    <published>2026-11-02T09:50:00.000Z</published>
+    <updated>2026-11-02T10:18:29.345Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="正向代理与反向代理"><a href="#正向代理与反向代理" class="headerlink" title="正向代理与反向代理"></a>正向代理与反向代理</h1><blockquote><p>代理（Proxy）是网络中一种常见的中间层机制，它位于客户端与目标服务器之间，代为转发请求与响应。根据代理的部署位置和服务对象不同，可分为<strong>正向代理</strong>和<strong>反向代理</strong>。本文从原理、用途、区别及实际应用场景对其进行全面梳理。</p></blockquote><hr><h2 id="一、什么是代理"><a href="#一、什么是代理" class="headerlink" title="一、什么是代理"></a>一、什么是代理</h2><p>代理服务器（Proxy Server）本质上是客户端与服务器之间的一个”中转站”：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">客户端 —— 请求 ——&gt; 代理服务器 —— 转发 ——&gt; 目标服务器</span><br><span class="line">客户端 &lt;—— 响应 —— 代理服务器 &lt;—— 响应 —— 目标服务器</span><br></pre></td></tr></table></figure><p>代理可以帮助完成转发、缓存、过滤、匿名、负载均衡、安全防护等任务。根据代理是被客户端主动配置使用，还是被服务器侧统一部署，可以划分为：</p><ul><li><strong>正向代理（Forward Proxy）</strong>：服务于客户端，替”上网的人”访问服务器。</li><li><strong>反向代理（Reverse Proxy）</strong>：服务于服务器，替”服务器”对外提供服务。</li></ul><hr><h2 id="二、正向代理（Forward-Proxy）"><a href="#二、正向代理（Forward-Proxy）" class="headerlink" title="二、正向代理（Forward Proxy）"></a>二、正向代理（Forward Proxy）</h2><h3 id="2-1-定义"><a href="#2-1-定义" class="headerlink" title="2.1 定义"></a>2.1 定义</h3><p>正向代理部署在<strong>客户端一侧</strong>（或在客户端与服务器之间的”客户端所属网络”内），由<strong>客户端主动配置</strong>。它代表的是客户端，替客户端向目标服务器发出请求，再把响应返回给客户端。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">客户端A ─┐</span><br><span class="line">客户端B ─┼──&gt; [正向代理] ──&gt; 目标服务器</span><br><span class="line">客户端C ─┘</span><br></pre></td></tr></table></figure><p>对目标服务器而言，它看到的请求来源是<strong>代理服务器的 IP</strong>，而非真实客户端的 IP。</p><h3 id="2-2-典型用途"><a href="#2-2-典型用途" class="headerlink" title="2.2 典型用途"></a>2.2 典型用途</h3><ol><li><strong>访问被限制或不可达的资源</strong>：绕过防火墙/地域限制，访问境外或特定网络中的站点。</li><li><strong>隐藏真实 IP / 保护客户端</strong>：目标服务器只能看到代理 IP，无法直接定位客户端。</li><li><strong>缓存加速</strong>：代理缓存热点内容，减少回源请求，加快访问速度。</li><li><strong>内容过滤与审计</strong>：企业对员工上网行为进行管控、拦截违规站点、记录访问日志。</li><li><strong>局域网共享上网</strong>：多个内网客户端通过一台代理统一出口访问公网。</li></ol><h3 id="2-3-优缺点"><a href="#2-3-优缺点" class="headerlink" title="2.3 优缺点"></a>2.3 优缺点</h3><p><strong>优点</strong></p><ul><li>能解决客户端访问受限资源、跨境/跨网访问问题。</li><li>可统一出口 IP，隐藏客户端身份。</li><li>便于做缓存、内容过滤和上网行为审计。</li></ul><p><strong>缺点</strong></p><ul><li>需要客户端主动配置代理（或部署统一下发），配置成本高。</li><li>代理服务器本身是瓶颈与单点，性能与可用性要求高。</li><li>所有流量都要经过代理，可能带来延迟与隐私风险。</li></ul><h3 id="2-4-常见工具"><a href="#2-4-常见工具" class="headerlink" title="2.4 常见工具"></a>2.4 常见工具</h3><ul><li>HTTP 代理：<code>Squid</code>、<code>Goproxy</code>、<code>HAProxy</code>（作为正向场景）。</li><li>SOCKS 代理：<code>Dante</code>、<code>privoxy</code>。</li><li>科学上网类客户端（如各类 HTTP/SOCKS5 加速工具），本质上也是客户端侧的代理转发。</li></ul><hr><h2 id="三、反向代理（Reverse-Proxy）"><a href="#三、反向代理（Reverse-Proxy）" class="headerlink" title="三、反向代理（Reverse Proxy）"></a>三、反向代理（Reverse Proxy）</h2><h3 id="3-1-定义"><a href="#3-1-定义" class="headerlink" title="3.1 定义"></a>3.1 定义</h3><p>反向代理部署在<strong>服务器一侧</strong>，由<strong>服务提供方统一部署</strong>，对客户端是<strong>透明</strong>的。客户端访问的是反向代理，反向代理再转发请求到后端的多台真实服务器。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">客户端 ──&gt; [反向代理/Nginx] ──&gt; 后端服务器1</span><br><span class="line">                               后端服务器2</span><br><span class="line">                               后端服务器3</span><br></pre></td></tr></table></figure><p>对客户端而言，它只认识反向代理这一”统一入口”，并不知道也不关心后端是哪台服务器、有几台。</p><h3 id="3-2-典型用途"><a href="#3-2-典型用途" class="headerlink" title="3.2 典型用途"></a>3.2 典型用途</h3><ol><li><strong>负载均衡</strong>：把请求分发到多台后端服务器，提升整体吞吐与可用性。</li><li><strong>动静分离 / 缓存</strong>：把静态资源请求交给缓存或 CDN，动态请求转发到应用服务器。</li><li><strong>隐藏后端架构</strong>：客户端看不到真实后端 IP，减少被直接攻击面。</li><li><strong>集中处理安全策略</strong>：在入口统一做 WAF 防护、限流、IP 黑名单、请求体大小限制等。</li><li><strong>TLS 卸载 / 统一入口</strong>：在反向代理层集中处理 HTTPS 证书、SSL 终止，后端可走明文 HTTP。</li><li><strong>多服务路由</strong>：一个域名下按路径/域名分发到多个微服务（路径路由、灰度发布）。</li></ol><h3 id="3-3-优缺点"><a href="#3-3-优缺点" class="headerlink" title="3.3 优缺点"></a>3.3 优缺点</h3><p><strong>优点</strong></p><ul><li>对客户端透明，无需客户端配置。</li><li>集中承担负载均衡、缓存、安全、限流、SSL 卸载等职责，后端应用更轻量。</li><li>可隐藏后端真实架构，提升安全性。</li></ul><p><strong>缺点</strong></p><ul><li>反向代理本身是流量必经点，是高可用设计的<strong>关键单点</strong>，通常需做主备/集群。</li><li>增加一次转发会带来少量额外延迟。</li><li>配置相对复杂（涉及路由、SSL、限流、后端健康检查等）。</li></ul><h3 id="3-4-常见工具"><a href="#3-4-常见工具" class="headerlink" title="3.4 常见工具"></a>3.4 常见工具</h3><ul><li><strong>Nginx</strong>：最主流的反向代理，负载均衡、静态文件服务、缓存。</li><li><strong>OpenResty / Kong / APISIX</strong>：基于 Lua 的 API 网关。</li><li><strong>HAProxy</strong>：高性能 TCP/HTTP 负载均衡。</li><li><strong>Traefik、Caddy</strong>：云原生、自动获取证书的反向代理。</li><li>各类云负载均衡（SLB/ALB/LB）也是反向代理的托管形态。</li></ul><hr><h2 id="四、正向代理-vs-反向代理"><a href="#四、正向代理-vs-反向代理" class="headerlink" title="四、正向代理 vs 反向代理"></a>四、正向代理 vs 反向代理</h2><table><thead><tr><th>对比维度</th><th>正向代理</th><th>反向代理</th></tr></thead><tbody><tr><td><strong>代表谁</strong></td><td>代表客户端</td><td>代表服务器</td></tr><tr><td><strong>部署位置</strong></td><td>客户端一侧</td><td>服务器一侧</td></tr><tr><td><strong>是否对客户端透明</strong></td><td>不透明，需客户端显式配置</td><td>透明，客户端无需感知</td></tr><tr><td><strong>服务对象</strong></td><td>多个客户端访问外部</td><td>为内部多个服务器对外提供服务</td></tr><tr><td><strong>谁能看见目标</strong></td><td>客户端知道目标，目标不知道客户端</td><td>客户端不知道后端，后端真实地址被隐藏</td></tr><tr><td><strong>典型价值</strong></td><td>突破访问限制、隐藏客户端、缓存、审计</td><td>负载均衡、隐藏后端、安全加固、统一网关</td></tr><tr><td><strong>配置主体</strong></td><td>客户端 / 客户端网络管理员</td><td>服务端运维</td></tr></tbody></table><p><strong>一句话记忆</strong>：</p><ul><li><strong>正向代理</strong>：客户端要”越墙”去访问目标 —— 替用户去拿。</li><li><strong>反向代理</strong>：服务器要”挡在前面”统一对外 —— 替服务器去接。</li></ul><hr><h2 id="五、常见组合与生产实践"><a href="#五、常见组合与生产实践" class="headerlink" title="五、常见组合与生产实践"></a>五、常见组合与生产实践</h2><h3 id="5-1-前端反向代理-后端集群（最常见）"><a href="#5-1-前端反向代理-后端集群（最常见）" class="headerlink" title="5.1 前端反向代理 + 后端集群（最常见）"></a>5.1 前端反向代理 + 后端集群（最常见）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">互联网</span><br><span class="line">   │</span><br><span class="line">   ▼</span><br><span class="line">Nginx 反向代理 (80/443, 证书终止 + 负载均衡)</span><br><span class="line">   ├──&gt; Web 服务器 A (10.0.0.11)</span><br><span class="line">   ├──&gt; Web 服务器 B (10.0.0.12)</span><br><span class="line">   └──&gt; Web 服务器 C (10.0.0.13)</span><br></pre></td></tr></table></figure><h3 id="5-2-正向代理-反向代理同时存在"><a href="#5-2-正向代理-反向代理同时存在" class="headerlink" title="5.2 正向代理 + 反向代理同时存在"></a>5.2 正向代理 + 反向代理同时存在</h3><p>在一个完整的链路中，两者可能同时出现，例如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">内网员工 ──&gt; 企业正向代理（上网管控） ──&gt; 公网 ──&gt; Nginx 反向代理 ──&gt; 后端服务</span><br></pre></td></tr></table></figure><p>左侧是正向代理（服务客户端），右侧是反向代理（服务后端），职责边界清晰。</p><hr><h2 id="六、如何选择"><a href="#六、如何选择" class="headerlink" title="六、如何选择"></a>六、如何选择</h2><ul><li><strong>目标</strong>：想让”客户端”借助代理访问外部受限资源 → <strong>正向代理</strong>。</li><li><strong>目标</strong>：想让后端服务器对外提供统一入口、做负载均衡和防护 → <strong>反向代理</strong>。</li><li><strong>判断口诀</strong>：<strong>看它在为谁”打工”。</strong> 替客户端打先锋的是正向代理；替后端兜底的是反向代理。</li></ul><hr><h2 id="七、小结"><a href="#七、小结" class="headerlink" title="七、小结"></a>七、小结</h2><ul><li>正向代理<strong>面向客户端</strong>，客户端主动配置，隐藏客户端身份、突破访问限制。</li><li>反向代理<strong>面向服务器</strong>，对客户端透明，承担负载均衡、安全加固、统一网关。</li><li>两者并非互斥，大型系统中常组合使用。</li><li>选择取决于你是要”帮客户端访问”还是要”帮服务器接客”。</li></ul><blockquote><p>一句话概括：<strong>正向代理是”替用户访问”，反向代理是”替服务器接待”。</strong></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;正向代理与反向代理&quot;&gt;&lt;a href=&quot;#正向代理与反向代理&quot; class=&quot;headerlink&quot; title=&quot;正向代理与反向代理&quot;&gt;&lt;/a&gt;正向代理与反向代理&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;代理（Proxy）是网络中一种常见的中间层机制，它位于客户</summary>
+      
+    
+    
+    
+    <category term="网络" scheme="http://sysszcl.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+    <category term="网络" scheme="http://sysszcl.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>PS将图片修改为白底图片</title>
@@ -470,30 +495,6 @@
     
     
     <category term="Algorithm" scheme="http://sysszcl.github.io/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浏览器和Session之间关联的技术内幕</title>
-    <link href="http://sysszcl.github.io/article/9a8d88a0.html"/>
-    <id>http://sysszcl.github.io/article/9a8d88a0.html</id>
-    <published>2022-01-23T14:07:00.000Z</published>
-    <updated>2025-06-20T14:42:26.145Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Session技术，底层其实是基于Cookie技术来实现的"><a href="#Session技术，底层其实是基于Cookie技术来实现的" class="headerlink" title="Session技术，底层其实是基于Cookie技术来实现的"></a>Session技术，底层其实是基于Cookie技术来实现的</h3><p>1.浏览器没有任何的cookie信息，浏览器向服务器发起请求。<br>2.服务器第一次使用request.getSession();(第一次使用本方法作用：创建会话对象)，服务器每次创建一个Cookie对象。这个Cookie对象的key永远是：JSESSIONID值是新创建出来的Session的id值。<br>3.通过响应把新创建出来的Session的id值返回给客户端Set-cookie: JSESSIONID=23423234211XAS223XASH233HSDF23;<br>4.浏览器解析到数据，就马上创建出一个Cookie对象。<br>5.浏览器端有了JSESSIONID之后的每次请求，都会把SESSION的id以Cookie的形式发送给服务器。<br>6.浏览器收到请求后再次使用request.getSession();(第二次使用本方法作用：通过Cookie中的id找到服务器之前创建好的Session对象，并返回)</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Session技术，底层其实是基于Cookie技术来实现的&quot;&gt;&lt;a href=&quot;#Session技术，底层其实是基于Cookie技术来实现的&quot; class=&quot;headerlink&quot; title=&quot;Session技术，底层其实是基于Cookie技术来实现的&quot;&gt;&lt;/a</summary>
-      
-    
-    
-    
-    <category term="Web" scheme="http://sysszcl.github.io/categories/Web/"/>
-    
-    
-    <category term="Web" scheme="http://sysszcl.github.io/tags/Web/"/>
     
   </entry>
   
